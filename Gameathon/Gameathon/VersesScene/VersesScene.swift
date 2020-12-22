@@ -14,37 +14,32 @@ class VersesScene: SKScene {
     
     var notificationLabel = SKLabelNode(text: "Tap the screen")
     var playerHasFinished = false
-    
-//    var firstImage = SKSpriteNode(imageNamed: "firstImage")
-//    var secondImage = SKSpriteNode(imageNamed: "secondImage")
-//    var playBtn = SKSpriteNode(imageNamed: "playBtn")
-//    var backBtn = SKSpriteNode(imageNamed: "backBtn")
     var scoreLabel = SKLabelNode()
     var player: AVAudioPlayer?
+    var score = 0
+    var touching = true
+    var imageIsSelected = false
+    var verseAudioNode = SKAudioNode()
     
-    var score = 0 {
-        didSet {
-            scoreLabel.text = "Score: \(score)"
-        }
-    }
+//    var score = 0 {
+//        didSet {
+//            scoreLabel.text = "Score: \(score)"
+//        }
+//    }
     
 
     override func didMove(to view: SKView) {
         
-        //        firstImage = self.childNode(withName: "firstImage") as! SKSpriteNode
-        //        secondImage = self.childNode(withName: "secondImage") as! SKSpriteNode
-        //        playBtn = self.childNode(withName: "playBtn") as! SKSpriteNode
-//        secondImage.isUserInteractionEnabled = true
-        
-        
         // score label
+        score = UserDefaults.standard.integer(forKey: "score")
+            
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
-        scoreLabel.text = "Score: 0"
+        scoreLabel.text = "Score: \(score)"
         scoreLabel.fontColor = .red
         scoreLabel.horizontalAlignmentMode = .right
         scoreLabel.position = CGPoint(x: self.frame.midX + 110, y: 150)
         addChild(scoreLabel)
-        
+  
         // game over
         self.backgroundColor = SKColor.black
         addChild(notificationLabel)
@@ -72,64 +67,72 @@ class VersesScene: SKScene {
         let location = touch.location(in: self)
         let node = self.atPoint(location)
 
-        if (node.name == "firstImage") {
-            playSound(fileName: "cheer")
-            score += 1
-            scoreLabel.text = "Score: \(score)"
-            
-        } else if (node.name == "secondImage") {
-            playSound(fileName: "wrongAnswer")
-            if score > 0 {
-                score -= 1
-                scoreLabel.text = "Score: \(score)"
-            } else {
-                score = 0
-                scoreLabel.text = "Score: \(score)"
-            }
+        if self.touching {
+            if (node.name == "firstImage") {
+                self.imageIsSelected = true
 
-        } else if (node.name == "playBtn") {
-            playSound(fileName: "verse")
+                score += 1
+                scoreLabel.text = "Score: \(score)"
+
+                let cheerAudioNode = SKAudioNode(fileNamed: "cheer.mp3")
+                cheerAudioNode.isPositional = false
+                self.addChild(cheerAudioNode)
+                cheerAudioNode.run(SKAction.play())
+                self.verseAudioNode.run(SKAction.stop())
+                let sequence = SKAction.sequence([SKAction.wait(forDuration: 4)])
+                cheerAudioNode.run(sequence, completion: {
+                    cheerAudioNode.removeFromParent()
+                    self.displayGameOver()
+                })
+                
+            } else if (node.name == "secondImage") {
+                
+                self.imageIsSelected = true
+                if score > 0 {
+                    score -= 1
+                    scoreLabel.text = "Score: \(score)"
+                } else {
+                    score = 0
+                    scoreLabel.text = "Score: \(score)"
+                }
+                
+                let wrongAnswerAudioNode = SKAudioNode(fileNamed: "wrongAnswer.mp3")
+                wrongAnswerAudioNode.isPositional = false
+                self.addChild(wrongAnswerAudioNode)
+                wrongAnswerAudioNode.run(SKAction.play())
+                self.verseAudioNode.run(SKAction.stop())
+                let sequence = SKAction.sequence([SKAction.wait(forDuration: 2)])
+                wrongAnswerAudioNode.run(sequence, completion: {
+                    wrongAnswerAudioNode.removeFromParent()
+                    self.displayGameOver()
+                })
+            }
+        }
+        
+        if (node.name == "playBtn") {
+            
+            verseAudioNode = SKAudioNode(fileNamed: "verse.mp3")
+            verseAudioNode.isPositional = false
+            self.addChild(verseAudioNode)
+            verseAudioNode.run(SKAction.play())
             
         } else if (node.name == "backBtn") {
-            // back to home page
-//            ACTManager.shared.transtion(self, toScene: .MainScene, transtion: SKTransition.moveIn(with: .right, duration: 0.5))
             guard let mainScene = MainScene(fileNamed: "MainScene") else { return }
             self.view?.presentScene(mainScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
         
         UserDefaults.standard.set(score, forKey: "score")
     }
-
-    
-    func playSound(fileName: String) {
-        let url = Bundle.main.url(forResource: fileName, withExtension: "mp3")!
-
-        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
-
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
-
-            player.prepareToPlay()
-            player.play()
-
-        } catch let error as NSError {
-            print(error.description)
-        }
-    }
-    
-    @objc func playerDidFinishPlaying(note: NSNotification) {
-        print("Video Finished")
-        playerHasFinished = true
-    }
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
     
-//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        displayGameOver()
-//    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if self.imageIsSelected {
+            self.touching = false
+        }
+    }
 }
 
 
