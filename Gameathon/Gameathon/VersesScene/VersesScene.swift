@@ -113,12 +113,12 @@ class VersesScene: SKScene {
         if (node.name == "playBtn") {
             
             self.verseAudioNode.run(SKAction.stop())
-            verseAudioNode = SKAudioNode(fileNamed: "verse1.mp3")
+            verseAudioNode = SKAudioNode(fileNamed: "verse.mp3")
             verseAudioNode.isPositional = false
             self.addChild(verseAudioNode)
             verseAudioNode.run(SKAction.play())
             
-            let sequence = SKAction.sequence([SKAction.wait(forDuration: 21)])
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 10)])
             verseAudioNode.run(sequence, completion: {
                 self.verseAudioNode.removeFromParent()
             })

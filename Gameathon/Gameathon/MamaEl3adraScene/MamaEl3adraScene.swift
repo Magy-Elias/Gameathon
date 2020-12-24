@@ -11,14 +11,6 @@ import SpriteKit
 
 class MamaEl3adraScene: SKScene {
     
-//    override func didMove(to view: SKView) {
-//
-//        guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
-//        let transition = SKTransition.fade(withDuration: 1.5)
-//        self.view?.presentScene(levelsScene, transition: transition)
-//    }
-
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
         guard let touch = touches.first else {
