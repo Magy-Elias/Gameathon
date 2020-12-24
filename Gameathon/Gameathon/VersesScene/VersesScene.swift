@@ -111,7 +111,8 @@ class VersesScene: SKScene {
         
         if (node.name == "playBtn") {
             
-            verseAudioNode = SKAudioNode(fileNamed: "verse.mp3")
+            self.verseAudioNode.run(SKAction.stop())
+            verseAudioNode = SKAudioNode(fileNamed: "verse1.mp3")
             verseAudioNode.isPositional = false
             self.addChild(verseAudioNode)
             verseAudioNode.run(SKAction.play())

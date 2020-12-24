@@ -24,6 +24,7 @@
 		80B23E422591268F007461A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B23E412591268F007461A3 /* GameViewController.swift */; };
 		80B23E452591268F007461A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E432591268F007461A3 /* Main.storyboard */; };
 		80B23E4A25912692007461A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E4825912692007461A3 /* LaunchScreen.storyboard */; };
+		80DBFC962594E88700AEA5DA /* verse1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 80DBFC952594E88700AEA5DA /* verse1.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		80B23E442591268F007461A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B23E4925912692007461A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80B23E4B25912692007461A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80DBFC952594E88700AEA5DA /* verse1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = verse1.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				190BE2BA25912BB7000610E6 /* cheer.mp3 */,
 				190BE2BB25912BB7000610E6 /* wrongAnswer.mp3 */,
 				190BE2BC25912BB7000610E6 /* verse.mp3 */,
+				80DBFC952594E88700AEA5DA /* verse1.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				190BE2BE25912BB7000610E6 /* cheer.mp3 in Resources */,
 				190BE2C9259131FE000610E6 /* VersesScene.sks in Resources */,
+				80DBFC962594E88700AEA5DA /* verse1.mp3 in Resources */,
 				80B23E452591268F007461A3 /* Main.storyboard in Resources */,
 				80B23E3C2591268F007461A3 /* GameScene.sks in Resources */,
 				190BE2BF25912BB7000610E6 /* wrongAnswer.mp3 in Resources */,
@@ -361,7 +365,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQVUT2443V;
+				DEVELOPMENT_TEAM = YA3HX6657K;
 				INFOPLIST_FILE = Gameathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LQVUT2443V;
+				DEVELOPMENT_TEAM = YA3HX6657K;
 				INFOPLIST_FILE = Gameathon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -14,15 +14,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     
     // add a field to store the current moving node
     private var currentNode: SKNode?
-    
-    
-//    var backBtn = SKSpriteNode(imageNamed: "backBtn")
-//
-//    var nblaImage = SKSpriteNode(imageNamed: "nbla")
-//    var qetharaImage = SKSpriteNode(imageNamed: "qethara")
-//    var shabkaImage = SKSpriteNode(imageNamed: "shabka")
-//    var sheepImage = SKSpriteNode(imageNamed: "sheep")
-//    var unknowImage = SKSpriteNode(imageNamed: "unknown")
+    private var human: SKSpriteNode?
     
     var scoreLabel = SKLabelNode()
     var score = 0 {
@@ -31,21 +23,16 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    
     override func didMove(to view: SKView) {
-        
-//        backBtn.isUserInteractionEnabled = true
-        
-//        nblaImage.physicsBody = SKPhysicsBody(circleOfRadius: nblaImage.size.height / 2)
-//        nblaImage.physicsBody?.isDynamic = false
-//        nblaImage.physicsBody!.contactTestBitMask = 1
-//        nblaImage.physicsBody!.categoryBitMask = 1
-//        nblaImage.physicsBody!.collisionBitMask = 1
-//
-//        unknowImage.physicsBody = SKPhysicsBody(circleOfRadius: unknowImage.size.height / 2)
-//        unknowImage.physicsBody!.contactTestBitMask = 2
-//        unknowImage.physicsBody!.categoryBitMask = 2
-//        unknowImage.physicsBody!.collisionBitMask = 2
+        physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        self.physicsWorld.contactDelegate = self
+
+        // Character
+        human = SKSpriteNode(imageNamed: "unknown")
+        human?.position = CGPoint(x: 264.293, y: -19.334)
+        human?.size = CGSize(width: 161.16, height: 240.889)
+        human?.name = "human"
+        addChild(human!)
         
         // score label
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
@@ -56,34 +43,6 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.position = CGPoint(x: self.frame.midX + 110, y: 150)
         addChild(scoreLabel)
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//
-////        nblaImage.physicsBody?.isDynamic = true
-//
-//        guard let touch = touches.first else {
-//            return
-//        }
-//
-//        let location = touch.location(in: self)
-//        let node = self.atPoint(location)
-//
-//        if (node.name == "backBtn") {
-//            guard let mainScene = MainScene(fileNamed: "MainScene") else { return }
-//            self.view?.presentScene(mainScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-//        }
-//
-//        if (node.name == "nbla") {
-//
-//        }
-//    }
-    
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-        print("we have contact")
-    }
-    
-    
     
     /// will be called when a player first touches the screen
     /// - Parameters:
@@ -121,12 +80,40 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    /// This ensures that when the user lifts their finger, the drag action completes
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // This ensures that when the user lifts their finger, the drag action completes
+        if let node = self.currentNode, let human = human {
+            if node.frame.intersects(human.frame) {
+                print("---- node on human")
+                if let nodeName = node.name, nodeName == "shabka" {
+                    print("wrong answer")
+                    let wrongAnswerAudioNode = SKAudioNode(fileNamed: "wrongAnswer.mp3")
+                    wrongAnswerAudioNode.isPositional = false
+                    self.addChild(wrongAnswerAudioNode)
+                    wrongAnswerAudioNode.run(SKAction.play())
+                    let sequence = SKAction.sequence([SKAction.wait(forDuration: 2)])
+                    wrongAnswerAudioNode.run(sequence, completion: {
+                        wrongAnswerAudioNode.removeFromParent()
+                        self.displayGameOver()
+                    })
+                } else {
+                    print("Bravooooo")
+                }
+            }
+        }
         self.currentNode = nil
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.currentNode = nil
+    }
+    
+    func displayGameOver() {
+        
+        let gameOverScene = GameOverScene(size: size)
+        gameOverScene.scaleMode = scaleMode
+        
+        let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+        view?.presentScene(gameOverScene, transition: reveal)
     }
 }
