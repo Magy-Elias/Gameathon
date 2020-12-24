@@ -10,10 +10,6 @@ import Foundation
 import SpriteKit
 
 class SelectionScene: SKScene {
-    
-    override func didMove(to view: SKView) {
-        
-    }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -27,8 +23,8 @@ class SelectionScene: SKScene {
         if (node.name == "selection") {
             
             // navigate to characters track screen
-            guard let mainScene = MainScene(fileNamed: "CharactersTrackScene") else { return }
-            self.view?.presentScene(mainScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            guard let charactersTrackScene = CharactersTrackScene(fileNamed: "CharactersTrackScene") else { return }
+            self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
     }
 }

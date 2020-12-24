@@ -7,3 +7,24 @@
 //
 
 import Foundation
+import SpriteKit
+
+class CharactersTrackScene: SKScene {
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let location = touch.location(in: self)
+        let node = self.atPoint(location)
+        
+        if (node.name == "charctersTrack") {
+            
+            // navigate to characters track screen
+            guard let mamaEl3adraScene = MamaEl3adraScene(fileNamed: "MamaEl3adraScene") else { return }
+            self.view?.presentScene(mamaEl3adraScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+        }
+    }
+}

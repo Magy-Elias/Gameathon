@@ -9,11 +9,11 @@
 import Foundation
 import SpriteKit
 
-class MainScene: SKScene {
+class LevelsScene: SKScene {
     
-    var partOne = SKSpriteNode(imageNamed: "partOne")
-    var partTwo = SKSpriteNode(imageNamed: "partTwo")
-    
+//    var partOne = SKSpriteNode(imageNamed: "partOne")
+//    var partTwo = SKSpriteNode(imageNamed: "partTwo")
+//
     var scoreLabel = SKLabelNode()
     var score = 0 {
         didSet {
@@ -43,10 +43,10 @@ class MainScene: SKScene {
 
         if (node.name == "partOne") {
 //            ACTManager.shared.transtion(self, toScene: .VersesScene, transtion: SKTransition.moveIn(with: .right, duration: 0.5))
-            guard let versesScene = MainScene(fileNamed: "VersesScene") else { return }
+            guard let versesScene = LevelsScene(fileNamed: "VersesScene") else { return }
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         } else if (node.name == "partTwo") {
-            guard let versesScene = MainScene(fileNamed: "CharacterScene") else { return }
+            guard let versesScene = LevelsScene(fileNamed: "CharacterScene") else { return }
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
     }

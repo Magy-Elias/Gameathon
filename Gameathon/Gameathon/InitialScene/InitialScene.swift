@@ -22,9 +22,9 @@ class InitialScene: SKScene {
         
         if (node.name == "yllaNl3b") {
             
-            // navigate to track screen
-            guard let mainScene = MainScene(fileNamed: "MainScene") else { return }
-            self.view?.presentScene(mainScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            // navigate to selection track screen
+            guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
+            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
     }
 }

@@ -101,6 +101,7 @@ class VersesScene: SKScene {
                 self.addChild(wrongAnswerAudioNode)
                 wrongAnswerAudioNode.run(SKAction.play())
                 self.verseAudioNode.run(SKAction.stop())
+                
                 let sequence = SKAction.sequence([SKAction.wait(forDuration: 2)])
                 wrongAnswerAudioNode.run(sequence, completion: {
                     wrongAnswerAudioNode.removeFromParent()
@@ -117,9 +118,14 @@ class VersesScene: SKScene {
             self.addChild(verseAudioNode)
             verseAudioNode.run(SKAction.play())
             
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 21)])
+            verseAudioNode.run(sequence, completion: {
+                self.verseAudioNode.removeFromParent()
+            })
+            
         } else if (node.name == "backBtn") {
-            guard let mainScene = MainScene(fileNamed: "MainScene") else { return }
-            self.view?.presentScene(mainScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
+            self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
         
         UserDefaults.standard.set(score, forKey: "score")
@@ -158,8 +164,8 @@ class GameOverScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let mainScene = MainScene(fileNamed: "MainScene") else { return }
-        self.view?.presentScene(mainScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+        guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
+        self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

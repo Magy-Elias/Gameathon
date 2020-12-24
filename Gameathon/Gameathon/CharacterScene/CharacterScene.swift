@@ -56,8 +56,8 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
             let node = self.atPoint(location)
             
             if (node.name == "backBtn") {
-                guard let mainScene = MainScene(fileNamed: "MainScene") else { return }
-                self.view?.presentScene(mainScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+                guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
+                self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             }
             
             // you call the nodes(at:) method to get an array of all nodes at the touch location
