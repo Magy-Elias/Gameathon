@@ -125,7 +125,7 @@ class VersesScene: SKScene {
             
         } else if (node.name == "backBtn") {
             guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
-            self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         }
         
         UserDefaults.standard.set(score, forKey: "score")

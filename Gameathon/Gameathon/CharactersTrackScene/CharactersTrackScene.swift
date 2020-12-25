@@ -28,7 +28,7 @@ class CharactersTrackScene: SKScene {
             
         } else if (node.name == "backBtn") {
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
-            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         }
     }
 }
