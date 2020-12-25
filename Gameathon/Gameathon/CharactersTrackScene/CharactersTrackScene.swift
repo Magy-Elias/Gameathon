@@ -21,14 +21,14 @@ class CharactersTrackScene: SKScene {
         let node = self.atPoint(location)
         
         if (node.name == "mamaEl3adra") {
-            
             // navigate to characters track screen
             guard let mamaEl3adraScene = MamaEl3adraScene(fileNamed: "MamaEl3adraScene") else { return }
             self.view?.presentScene(mamaEl3adraScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
-        } else if (node.name == "backBtn") {
+        } else if (node.name == "homeBtn") {
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+            
         }
     }
 }
