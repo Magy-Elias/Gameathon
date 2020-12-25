@@ -16,6 +16,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     private var currentNode: SKNode?
     private var human: SKSpriteNode?
     private var submitButton: SKSpriteNode?
+    private var isSubmitting: Bool = true
     
     var scoreLabel = SKLabelNode()
     var score = 0 {
@@ -59,7 +60,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     ///   - event: gives information about the type of interaction
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // Initialize drag here.
-        if let touch = touches.first {
+        if let touch = touches.first, isSubmitting {
             let location = touch.location(in: self)
             
             let node = self.atPoint(location)
@@ -68,6 +69,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                 guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
                 self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             }
+            
             
             // you call the nodes(at:) method to get an array of all nodes at the touch location
             let touchedNodes = self.nodes(at: location)
@@ -78,12 +80,13 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                     self.currentNode = node
                 }
             }
+            
         }
     }
     
     /// is called each time iOS wants to notify you of a new movement event
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first, let node = self.currentNode {
+        if let touch = touches.first, let node = self.currentNode{//, isSubmitting {
             let touchLocation = touch.location(in: self)
             node.position = touchLocation
         }
@@ -119,6 +122,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                     score += 1
                 }
                 
+                self.isSubmitting = false
                 if score < 3 {
                     print("wrong answer")
                     let wrongAnswerAudioNode = SKAudioNode(fileNamed: "wrongAnswer.mp3")
