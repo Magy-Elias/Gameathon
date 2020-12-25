@@ -122,7 +122,7 @@ class VersesScene: SKScene {
             self.addChild(verseAudioNode)
             verseAudioNode.run(SKAction.play())
             
-            let sequence = SKAction.sequence([SKAction.wait(forDuration: 10.7)])
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 10.6)])
             verseAudioNode.run(sequence, completion: {
                 self.verseAudioNode.removeFromParent()
             })
