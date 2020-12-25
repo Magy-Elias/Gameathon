@@ -10,6 +10,87 @@ import Foundation
 import SpriteKit
 
 class CharactersTrackScene: SKScene {
+    
+    var score: Int = 0
+
+    override func didMove(to view: SKView) {
+        
+        self.score = UserDefaults.standard.integer(forKey: "score")
+ 
+        if self.score > 5 && self.score < 10 {
+           
+            rateOneStar()
+            
+        } else if self.score > 10 && self.score < 20 {
+            
+            rateTwostars()
+            
+        } else if self.score > 20 {
+            
+            rateThreestars()
+        }
+    }
+    
+    func rateOneStar() {
+        for node in self.children {
+            if node.name == "star1" {
+                node.removeFromParent()
+            }
+        }
+        let newStarOne = SKSpriteNode(texture: SKTexture(imageNamed: "star3"))
+        newStarOne.position = CGPoint(x: -275, y: -42)
+        newStarOne.size = CGSize(width: 51, height: 49)
+        newStarOne.zPosition = 4
+        self.addChild(newStarOne)
+    }
+    
+    func rateTwostars() {
+        for node in self.children {
+            if node.name == "star1" || node.name == "star2" {
+                node.removeFromParent()
+            }
+        }
+        let newStarOne = SKSpriteNode(texture: SKTexture(imageNamed: "star3"))
+        newStarOne.position = CGPoint(x: -275, y: -42)
+        newStarOne.size = CGSize(width: 51, height: 49)
+        newStarOne.zPosition = 4
+        self.addChild(newStarOne)
+        
+        let newStarTwo = SKSpriteNode(texture: SKTexture(imageNamed: "star3"))
+        newStarTwo.position = CGPoint(x: -225, y: -42)
+        newStarTwo.size = CGSize(width: 51, height: 49)
+        newStarTwo.zPosition = 4
+        self.addChild(newStarTwo)
+        
+    }
+    
+    func rateThreestars() {
+        
+        for node in self.children {
+            if node.name == "star1" || node.name == "star2" || node.name == "star3" {
+                node.removeFromParent()
+            }
+        }
+        
+         let newStarOne = SKSpriteNode(texture: SKTexture(imageNamed: "star3"))
+         newStarOne.position = CGPoint(x: -275, y: -42)
+         newStarOne.size = CGSize(width: 51, height: 49)
+         newStarOne.zPosition = 4
+         self.addChild(newStarOne)
+         
+         let newStarTwo = SKSpriteNode(texture: SKTexture(imageNamed: "star3"))
+         newStarTwo.position = CGPoint(x: -225, y: -42)
+         newStarTwo.size = CGSize(width: 51, height: 49)
+         newStarTwo.zPosition = 4
+         self.addChild(newStarTwo)
+         
+        let newStarThree = SKSpriteNode(texture: SKTexture(imageNamed: "star3"))
+        newStarThree.position = CGPoint(x: -175, y: -42)
+        newStarThree.size = CGSize(width: 51, height: 49)
+        newStarThree.zPosition = 4
+        self.addChild(newStarThree)
+     }
+    
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
