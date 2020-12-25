@@ -29,7 +29,7 @@ class LevelsScene: SKScene {
         scoreLabel.fontColor = .red
         scoreLabel.horizontalAlignmentMode = .right
         scoreLabel.position = CGPoint(x: self.frame.midX + 110, y: 150)
-        addChild(scoreLabel)
+//        addChild(scoreLabel)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

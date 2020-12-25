@@ -54,7 +54,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
         scoreLabel.fontColor = .red
         scoreLabel.horizontalAlignmentMode = .right
         scoreLabel.position = CGPoint(x: self.frame.midX + 110, y: 150)
-        addChild(scoreLabel)
+//        addChild(scoreLabel)
     }
     
     /// will be called when a player first touches the screen

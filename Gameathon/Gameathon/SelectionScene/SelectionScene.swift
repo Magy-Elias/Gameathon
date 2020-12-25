@@ -65,6 +65,12 @@ class SelectionScene: SKScene {
             // navigate to characters track screen
             guard let charactersTrackScene = CharactersTrackScene(fileNamed: "CharactersTrackScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            
+        } else if (node.name == "settings") {
+            
+            // navigate to characters track screen
+            guard let charactersTrackScene = SettingsScene(fileNamed: "SettingsScene") else { return }
+            self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
     }
 }

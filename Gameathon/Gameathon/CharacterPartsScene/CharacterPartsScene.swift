@@ -23,7 +23,7 @@ class CharacterPartsScene: SKScene {
         if (node.name == "elbsharaEntry") {
             // navigate to characters track screen
             guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
-            let transition = SKTransition.doorway(withDuration: 1)
+            let transition = SKTransition.moveIn(with: .right, duration: 1)
             self.view?.presentScene(levelsScene, transition: transition)
         }
     }
