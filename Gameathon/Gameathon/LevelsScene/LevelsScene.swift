@@ -49,7 +49,12 @@ class LevelsScene: SKScene {
         } else if (node.name == "partTwo") {
             guard let versesScene = LevelsScene(fileNamed: "CharacterScene") else { return }
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+         
             
+        } else if (node.name == "fadela") {
+        guard let versesScene = LevelsScene(fileNamed: "CharacterScene") else { return }
+        self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+        
         } else if (node.name == "backBtn") {
             guard let charactersTrackScene = CharacterPartsScene(fileNamed: "CharacterPartsScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
