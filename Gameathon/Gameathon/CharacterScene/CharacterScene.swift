@@ -14,7 +14,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     
     // add a field to store the current moving node
     private var currentNode: SKNode?
-    private var human: SKSpriteNode?
+    private var mainCharacter: SKSpriteNode?
     private var submitButton: SKSpriteNode?
     private var isSubmitting: Bool = true
     
@@ -27,22 +27,25 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         // Character
-        human = SKSpriteNode(imageNamed: "unknown")
-        human?.position = CGPoint(x: 264.293, y: -19.334)
-        human?.size = CGSize(width: 161.16, height: 240.889)
-        human?.name = "human"
-        human?.zPosition = -1
-        addChild(human!)
+//        mainCharacter = SKSpriteNode(imageNamed: "elbsharaIcon")
+//        mainCharacter?.position = CGPoint(x: 16.053, y: 3.491)
+//        mainCharacter?.size = CGSize(width: 161.16, height: 240.889)
+//        mainCharacter?.name = "mainCharacter"
+//        mainCharacter?.zPosition = -1
+//        addChild(mainCharacter!)
         
-        physicsBody = SKPhysicsBody(edgeLoopFrom: human!.frame)
+        mainCharacter = childNode(withName: "mainCharacter") as? SKSpriteNode
+        
+        physicsBody = SKPhysicsBody(edgeLoopFrom: mainCharacter!.frame)
         self.physicsWorld.contactDelegate = self
         
         // Submit Button
-        submitButton = SKSpriteNode(imageNamed: "play")
-        submitButton?.position = CGPoint(x: 134.293, y: 70.0)
-        submitButton?.size = CGSize(width: 60.0, height: 60.0)
-        submitButton?.name = "submitButton"
-        addChild(submitButton!)
+//        submitButton = SKSpriteNode(imageNamed: "Group 2146")
+//        submitButton?.position = CGPoint(x: 134.293, y: 70.0)
+//        submitButton?.size = CGSize(width: 60.0, height: 60.0)
+//        submitButton?.name = "submitButton"
+//        addChild(submitButton!)
+        submitButton = childNode(withName: "submitButton") as? SKSpriteNode
         
         // score label
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
@@ -75,8 +78,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
             let touchedNodes = self.nodes(at: location)
             // The nodes are looked at in reverse order as a primitive way to select nodes that appear on top “first”
             for node in touchedNodes.reversed() {
-                if (node.name == "nbla") || (node.name == "qethara") || (node.name == "shabka") ||
-                   (node.name == "sheep")  {
+                if (node.name == "character1") || (node.name == "character2") || (node.name == "character3")  {
                     self.currentNode = node
                 }
             }
@@ -86,7 +88,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     
     /// is called each time iOS wants to notify you of a new movement event
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first, let node = self.currentNode{//, isSubmitting {
+        if let touch = touches.first, let node = self.currentNode{
             let touchLocation = touch.location(in: self)
             node.position = touchLocation
         }
@@ -94,36 +96,33 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     
     /// This ensures that when the user lifts their finger, the drag action completes
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let node = self.currentNode, let human = human {
-            if node.frame.intersects(human.frame) {
-                print("---- node on human")
+        if let node = self.currentNode, let mainCharacter = mainCharacter {
+            if node.frame.intersects(mainCharacter.frame) {
+                print("---- node on mainCharacter")
                 
                 node.setScale(0.2)
-//                self.physicsWorld.body(in: human.frame)
+//                self.physicsWorld.body(in: mainCharacter.frame)
             }
         }
         
-        if let touch = touches.first, let human = human {
+        if let touch = touches.first, let mainCharacter = mainCharacter {
             let location = touch.location(in: self)
             
             let node = self.atPoint(location)
         
             if node.name == "submitButton" {
-                if human.intersects(childNode(withName: "qethara")!) {
+                if mainCharacter.intersects(childNode(withName: "character1")!) {
                     score += 1
                 }
-                if human.intersects(childNode(withName: "nbla")!) {
+                if mainCharacter.intersects(childNode(withName: "character3")!) {
                     score += 1
                 }
-                if human.intersects(childNode(withName: "shabka")!) {
+                if mainCharacter.intersects(childNode(withName: "character2")!) {
                     score -= 1
-                }
-                if human.intersects(childNode(withName: "sheep")!) {
-                    score += 1
                 }
                 
                 self.isSubmitting = false
-                if score < 3 {
+                if score < 2 {
                     print("wrong answer")
                     let wrongAnswerAudioNode = SKAudioNode(fileNamed: "wrongAnswer.mp3")
                     wrongAnswerAudioNode.isPositional = false
