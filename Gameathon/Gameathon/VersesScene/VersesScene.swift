@@ -34,6 +34,16 @@ class VersesScene: SKScene {
 
     override func didMove(to view: SKView) {
         
+//        verseAudioNode = SKAudioNode(fileNamed: "")
+//         verseAudioNode.isPositional = false
+//         self.addChild(verseAudioNode)
+//         verseAudioNode.run(SKAction.play())
+//         
+//         let sequence = SKAction.sequence([SKAction.wait(forDuration: 10)])
+//         verseAudioNode.run(sequence, completion: {
+//             self.verseAudioNode.removeFromParent()
+//         })
+        
         // score label
         score = UserDefaults.standard.integer(forKey: "score")
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
@@ -155,7 +165,7 @@ class VersesScene: SKScene {
   
         emitter?.position = CGPoint(x: 0.5, y: 0.5)
         emitter?.particleColorSequence = nil
-        emitter?.particleColorBlendFactor = 1.0
+        emitter?.particleColorBlendFactor = 2.0
 
         self.addChild(emitter!)
 
