@@ -31,6 +31,7 @@
 		1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBBE259620BF00064515 /* CharacterPartsScene.sks */; };
 		1999CBC22596369E00064515 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999CBC12596369E00064515 /* SettingsScene.swift */; };
 		1999CBC4259636A900064515 /* SettingsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBC3259636A900064515 /* SettingsScene.sks */; };
+		1999CBC62596476700064515 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBC52596476700064515 /* MyParticle.sks */; };
 		80B23E3A2591268F007461A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B23E392591268F007461A3 /* AppDelegate.swift */; };
 		80B23E3C2591268F007461A3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3B2591268F007461A3 /* GameScene.sks */; };
 		80B23E3E2591268F007461A3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3D2591268F007461A3 /* Actions.sks */; };
@@ -65,6 +66,7 @@
 		1999CBBE259620BF00064515 /* CharacterPartsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterPartsScene.sks; sourceTree = "<group>"; };
 		1999CBC12596369E00064515 /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		1999CBC3259636A900064515 /* SettingsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsScene.sks; sourceTree = "<group>"; };
+		1999CBC52596476700064515 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		80B23E362591268F007461A3 /* Gameathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B23E392591268F007461A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B23E3B2591268F007461A3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				80B23E4825912692007461A3 /* LaunchScreen.storyboard */,
 				80B23E4B25912692007461A3 /* Info.plist */,
 				190BE2CC259134CC000610E6 /* Assets.xcassets */,
+				1999CBC52596476700064515 /* MyParticle.sks */,
 			);
 			path = Gameathon;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				19716F1B25953DB900EC7BBA /* verse.mp3 in Resources */,
 				80B23E4A25912692007461A3 /* LaunchScreen.storyboard in Resources */,
 				1999CBC4259636A900064515 /* SettingsScene.sks in Resources */,
+				1999CBC62596476700064515 /* MyParticle.sks in Resources */,
 				19716F02259513A800EC7BBA /* InitialScene.sks in Resources */,
 				80B23E3E2591268F007461A3 /* Actions.sks in Resources */,
 				19716F0F2595284D00EC7BBA /* SelectionScene.sks in Resources */,
