@@ -15,6 +15,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     // add a field to store the current moving node
     private var currentNode: SKNode?
     private var human: SKSpriteNode?
+    private var submitButton: SKSpriteNode?
     
     var scoreLabel = SKLabelNode()
     var score = 0 {
@@ -24,15 +25,23 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
-        self.physicsWorld.contactDelegate = self
-
         // Character
         human = SKSpriteNode(imageNamed: "unknown")
         human?.position = CGPoint(x: 264.293, y: -19.334)
         human?.size = CGSize(width: 161.16, height: 240.889)
         human?.name = "human"
+        human?.zPosition = -1
         addChild(human!)
+        
+        physicsBody = SKPhysicsBody(edgeLoopFrom: human!.frame)
+        self.physicsWorld.contactDelegate = self
+        
+        // Submit Button
+        submitButton = SKSpriteNode(imageNamed: "play")
+        submitButton?.position = CGPoint(x: 134.293, y: 70.0)
+        submitButton?.size = CGSize(width: 60.0, height: 60.0)
+        submitButton?.name = "submitButton"
+        addChild(submitButton!)
         
         // score label
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
@@ -85,7 +94,32 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
         if let node = self.currentNode, let human = human {
             if node.frame.intersects(human.frame) {
                 print("---- node on human")
-                if let nodeName = node.name, nodeName == "shabka" {
+                
+                node.setScale(0.2)
+//                self.physicsWorld.body(in: human.frame)
+            }
+        }
+        
+        if let touch = touches.first, let human = human {
+            let location = touch.location(in: self)
+            
+            let node = self.atPoint(location)
+        
+            if node.name == "submitButton" {
+                if human.intersects(childNode(withName: "qethara")!) {
+                    score += 1
+                }
+                if human.intersects(childNode(withName: "nbla")!) {
+                    score += 1
+                }
+                if human.intersects(childNode(withName: "shabka")!) {
+                    score -= 1
+                }
+                if human.intersects(childNode(withName: "sheep")!) {
+                    score += 1
+                }
+                
+                if score < 3 {
                     print("wrong answer")
                     let wrongAnswerAudioNode = SKAudioNode(fileNamed: "wrongAnswer.mp3")
                     wrongAnswerAudioNode.isPositional = false
@@ -98,9 +132,19 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                     })
                 } else {
                     print("Bravooooo")
+                    let cheerAudioNode = SKAudioNode(fileNamed: "cheer.mp3")
+                    cheerAudioNode.isPositional = false
+                    self.addChild(cheerAudioNode)
+                    cheerAudioNode.run(SKAction.play())
+                    let sequence = SKAction.sequence([SKAction.wait(forDuration: 4.5)])
+                    cheerAudioNode.run(sequence, completion: {
+                        cheerAudioNode.removeFromParent()
+                        self.displayGameOver()
+                    })
                 }
             }
         }
+        
         self.currentNode = nil
     }
     
@@ -109,6 +153,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func displayGameOver() {
+        UserDefaults.standard.set(score, forKey: "score")
         
         let gameOverScene = GameOverScene(size: size)
         gameOverScene.scaleMode = scaleMode
