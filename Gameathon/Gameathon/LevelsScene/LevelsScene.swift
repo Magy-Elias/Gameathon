@@ -41,12 +41,11 @@ class LevelsScene: SKScene {
         let location = touch.location(in: self)
         let node = self.atPoint(location)
 
-        if (node.name == "partOne") {
-            
+        if (node.name == "partTwo") {
             guard let versesScene = LevelsScene(fileNamed: "VersesScene") else { return }
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
-        } else if (node.name == "partTwo") {
+        } else if (node.name == "partThree") {
             guard let versesScene = LevelsScene(fileNamed: "CharacterScene") else { return }
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
