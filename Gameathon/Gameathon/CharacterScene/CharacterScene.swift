@@ -126,7 +126,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                 }
                 
                 self.isSubmitting = false
-                if score < 2 {
+                if mainCharacter.intersects(childNode(withName: "character3")!) {
                     print("wrong answer")
                     let wrongAnswerAudioNode = SKAudioNode(fileNamed: "wrongAnswer.mp3")
                     wrongAnswerAudioNode.isPositional = false

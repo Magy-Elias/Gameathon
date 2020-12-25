@@ -209,11 +209,11 @@
 			isa = PBXGroup;
 			children = (
 				1999CBC02596368800064515 /* SettingsScene */,
-				1999CBBB2596209B00064515 /* CharacterPartsScene */,
 				19716F05259522AF00EC7BBA /* InitialScene */,
 				19716F0B259525FC00EC7BBA /* SelectionScene */,
 				19716F102595299200EC7BBA /* CharactersTrackScene */,
 				19716F06259522D900EC7BBA /* MamaEl3adraScene */,
+				1999CBBB2596209B00064515 /* CharacterPartsScene */,
 				190BE2AE25912980000610E6 /* LevelsScene */,
 				190BE2C6259131FE000610E6 /* VersesScene */,
 				190BE2C125912CD5000610E6 /* CharacterScene */,
