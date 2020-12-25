@@ -20,7 +20,7 @@ class InitialScene: SKScene {
         let location = touch.location(in: self)
         let node = self.atPoint(location)
         
-        if (node.name == "yllaNl3b") {
+        if (node.name == "yllaNl3bBtn") {
             
             // navigate to selection track screen
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }

@@ -42,12 +42,16 @@ class LevelsScene: SKScene {
         let node = self.atPoint(location)
 
         if (node.name == "partOne") {
-//            ACTManager.shared.transtion(self, toScene: .VersesScene, transtion: SKTransition.moveIn(with: .right, duration: 0.5))
+            
             guard let versesScene = LevelsScene(fileNamed: "VersesScene") else { return }
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         } else if (node.name == "partTwo") {
             guard let versesScene = LevelsScene(fileNamed: "CharacterScene") else { return }
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            
+        } else if (node.name == "backBtn") {
+            guard let charactersTrackScene = CharactersTrackScene(fileNamed: "CharactersTrackScene") else { return }
+            self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
     }
 }
