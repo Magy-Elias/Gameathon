@@ -149,6 +149,7 @@ class VersesScene: SKScene {
         }
         
         UserDefaults.standard.set(score, forKey: "score")
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -180,6 +181,10 @@ class VersesScene: SKScene {
 
         self.run(SKAction.repeatForever( SKAction.sequence([action,wait])))
 
+    }
+    
+    @objc func sendRate() {
+        
     }
 }
 
