@@ -27,6 +27,8 @@
 		19716F1725953D7700EC7BBA /* VirtueScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19716F1625953D7700EC7BBA /* VirtueScene.swift */; };
 		19716F1925953D8600EC7BBA /* VirtueScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 19716F1825953D8600EC7BBA /* VirtueScene.sks */; };
 		19716F1B25953DB900EC7BBA /* verse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 19716F1A25953DB900EC7BBA /* verse.mp3 */; };
+		1999CBBD259620B200064515 /* CharacterPartsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999CBBC259620B200064515 /* CharacterPartsScene.swift */; };
+		1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBBE259620BF00064515 /* CharacterPartsScene.sks */; };
 		80B23E3A2591268F007461A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B23E392591268F007461A3 /* AppDelegate.swift */; };
 		80B23E3C2591268F007461A3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3B2591268F007461A3 /* GameScene.sks */; };
 		80B23E3E2591268F007461A3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3D2591268F007461A3 /* Actions.sks */; };
@@ -57,6 +59,8 @@
 		19716F1625953D7700EC7BBA /* VirtueScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtueScene.swift; sourceTree = "<group>"; };
 		19716F1825953D8600EC7BBA /* VirtueScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = VirtueScene.sks; sourceTree = "<group>"; };
 		19716F1A25953DB900EC7BBA /* verse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = verse.mp3; sourceTree = "<group>"; };
+		1999CBBC259620B200064515 /* CharacterPartsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPartsScene.swift; sourceTree = "<group>"; };
+		1999CBBE259620BF00064515 /* CharacterPartsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterPartsScene.sks; sourceTree = "<group>"; };
 		80B23E362591268F007461A3 /* Gameathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B23E392591268F007461A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B23E3B2591268F007461A3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -161,6 +165,15 @@
 			path = VirtueScene;
 			sourceTree = "<group>";
 		};
+		1999CBBB2596209B00064515 /* CharacterPartsScene */ = {
+			isa = PBXGroup;
+			children = (
+				1999CBBC259620B200064515 /* CharacterPartsScene.swift */,
+				1999CBBE259620BF00064515 /* CharacterPartsScene.sks */,
+			);
+			path = CharacterPartsScene;
+			sourceTree = "<group>";
+		};
 		80B23E2D2591268F007461A3 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +193,7 @@
 		80B23E382591268F007461A3 /* Gameathon */ = {
 			isa = PBXGroup;
 			children = (
+				1999CBBB2596209B00064515 /* CharacterPartsScene */,
 				19716F05259522AF00EC7BBA /* InitialScene */,
 				19716F0B259525FC00EC7BBA /* SelectionScene */,
 				19716F102595299200EC7BBA /* CharactersTrackScene */,
@@ -264,6 +278,7 @@
 				190BE2C9259131FE000610E6 /* VersesScene.sks in Resources */,
 				19716F0A2595231C00EC7BBA /* MamaEl3adraScene.sks in Resources */,
 				80B23E452591268F007461A3 /* Main.storyboard in Resources */,
+				1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */,
 				80B23E3C2591268F007461A3 /* GameScene.sks in Resources */,
 				190BE2BF25912BB7000610E6 /* wrongAnswer.mp3 in Resources */,
 				19716F1B25953DB900EC7BBA /* verse.mp3 in Resources */,
@@ -287,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19716F12259529A900EC7BBA /* CharactersTrackScene.swift in Sources */,
+				1999CBBD259620B200064515 /* CharacterPartsScene.swift in Sources */,
 				80B23E402591268F007461A3 /* GameScene.swift in Sources */,
 				190BE2B225912980000610E6 /* LevelsScene.swift in Sources */,
 				80B23E422591268F007461A3 /* GameViewController.swift in Sources */,

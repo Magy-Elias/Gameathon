@@ -50,7 +50,7 @@ class LevelsScene: SKScene {
             self.view?.presentScene(versesScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
         } else if (node.name == "backBtn") {
-            guard let charactersTrackScene = CharactersTrackScene(fileNamed: "CharactersTrackScene") else { return }
+            guard let charactersTrackScene = CharacterPartsScene(fileNamed: "CharacterPartsScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         }
     }
