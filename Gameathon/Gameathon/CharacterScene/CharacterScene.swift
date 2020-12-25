@@ -17,6 +17,10 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     private var mainCharacter: SKSpriteNode?
     private var submitButton: SKSpriteNode?
     private var isSubmitting: Bool = true
+    let emitter = SKEmitterNode(fileNamed: "MyParticle")
+    let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan]
+
+    
     
     var scoreLabel = SKLabelNode()
     var score = 0 {
@@ -135,6 +139,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                     })
                 } else {
                     print("Bravooooo")
+                    emitParticles()
                     let cheerAudioNode = SKAudioNode(fileNamed: "cheer.mp3")
                     cheerAudioNode.isPositional = false
                     self.addChild(cheerAudioNode)
@@ -164,4 +169,25 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
         let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
         view?.presentScene(gameOverScene, transition: reveal)
     }
+    
+    func emitParticles() {
+    
+          emitter?.position = CGPoint(x: 0.5, y: 0.5)
+          emitter?.particleColorSequence = nil
+          emitter?.particleColorBlendFactor = 1.0
+
+          self.addChild(emitter!)
+
+          let action = SKAction.run({
+              [unowned self] in
+              let random = Int(arc4random_uniform(UInt32(self.colors.count)))
+
+              self.emitter?.particleColor = self.colors[random];  //SKColor.yellow //
+          })
+
+          let wait = SKAction.wait(forDuration: 0.1)
+
+          self.run(SKAction.repeatForever( SKAction.sequence([action,wait])))
+
+      }
 }

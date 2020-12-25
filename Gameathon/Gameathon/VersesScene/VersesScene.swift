@@ -21,6 +21,10 @@ class VersesScene: SKScene {
     var imageIsSelected = false
     var verseAudioNode = SKAudioNode()
     
+    let emitter = SKEmitterNode(fileNamed: "MyParticle")
+    let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan]
+
+    
 //    var score = 0 {
 //        didSet {
 //            scoreLabel.text = "Score: \(score)"
@@ -32,7 +36,6 @@ class VersesScene: SKScene {
         
         // score label
         score = UserDefaults.standard.integer(forKey: "score")
-            
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Score: \(score)"
         scoreLabel.fontColor = .red
@@ -74,6 +77,7 @@ class VersesScene: SKScene {
                 score += 1
                 scoreLabel.text = "Score: \(score)"
 
+                self.emitParticles()
                 let cheerAudioNode = SKAudioNode(fileNamed: "cheer.mp3")
                 cheerAudioNode.isPositional = false
                 self.addChild(cheerAudioNode)
@@ -145,6 +149,27 @@ class VersesScene: SKScene {
         if self.imageIsSelected {
             self.touching = false
         }
+    }
+    
+    func emitParticles() {
+  
+        emitter?.position = CGPoint(x: 0.5, y: 0.5)
+        emitter?.particleColorSequence = nil
+        emitter?.particleColorBlendFactor = 1.0
+
+        self.addChild(emitter!)
+
+        let action = SKAction.run({
+            [unowned self] in
+            let random = Int(arc4random_uniform(UInt32(self.colors.count)))
+
+            self.emitter?.particleColor = self.colors[random];  //SKColor.yellow 
+        })
+
+        let wait = SKAction.wait(forDuration: 0.1)
+
+        self.run(SKAction.repeatForever( SKAction.sequence([action,wait])))
+
     }
 }
 
