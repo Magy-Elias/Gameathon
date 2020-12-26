@@ -150,6 +150,10 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                         self.displayGameOver()
                     })
                 }
+            }  else if (node.name == "homeBtn") {
+                guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
+                self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+                
             }
         }
         
