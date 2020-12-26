@@ -61,10 +61,14 @@ class LevelsScene: SKScene {
         } else if (node.name == "partFour") {
             guard let virtueScene = VirtueScene(fileNamed: "VirtueScene") else { return }
             self.view?.presentScene(virtueScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-        
+            
         } else if (node.name == "backBtn") {
             guard let charactersTrackScene = CharacterPartsScene(fileNamed: "CharacterPartsScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+        } else if (node.name == "homeBtn") {
+            guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
+            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+            
         }
     }
 }
