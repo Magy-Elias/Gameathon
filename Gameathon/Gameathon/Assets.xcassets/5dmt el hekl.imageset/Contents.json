@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "5dmt el hekl.pdf",
-      "idiom" : "universal"
+      "filename" : "5dmt el hekl.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "5dmt el hekl@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "5dmt el hekl@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
