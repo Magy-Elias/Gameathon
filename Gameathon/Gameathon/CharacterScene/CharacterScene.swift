@@ -21,6 +21,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan]
     var hintAudioNode = SKAudioNode()
     var isFromBack = false
+    var isFirstTouch = 0
     
     var scoreLabel = SKLabelNode()
     var score = 0 {
@@ -168,6 +169,18 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                 guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
                 selectionScene.isFromBack = true
                 self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+            } else if (node.name == "mute") {
+                
+                if isFirstTouch % 2 == 0 {
+                    hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
+                    self.isFirstTouch += 1
+                    (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"playBtn")
+                    
+                } else {
+                    hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
+                    self.isFirstTouch += 1
+                    (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"mute")
+                }
             }
         }
         
