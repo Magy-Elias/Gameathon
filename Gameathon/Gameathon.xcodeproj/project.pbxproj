@@ -16,6 +16,9 @@
 		190BE2C9259131FE000610E6 /* VersesScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 190BE2C7259131FE000610E6 /* VersesScene.sks */; };
 		190BE2CA259131FE000610E6 /* VersesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190BE2C8259131FE000610E6 /* VersesScene.swift */; };
 		190BE2CD259134CC000610E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 190BE2CC259134CC000610E6 /* Assets.xcassets */; };
+		196A50B025976BCB005639D4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 196A50AF25976BCB005639D4 /* MyParticle.sks */; };
+		196A50B325976D09005639D4 /* KnestyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A50B225976D09005639D4 /* KnestyScene.swift */; };
+		196A50B525976D2F005639D4 /* KnestyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 196A50B425976D2F005639D4 /* KnestyScene.sks */; };
 		19716F02259513A800EC7BBA /* InitialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 19716F01259513A800EC7BBA /* InitialScene.sks */; };
 		19716F04259514D600EC7BBA /* InitialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19716F03259514D600EC7BBA /* InitialScene.swift */; };
 		19716F082595230D00EC7BBA /* MamaEl3adraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19716F072595230D00EC7BBA /* MamaEl3adraScene.swift */; };
@@ -31,7 +34,6 @@
 		1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBBE259620BF00064515 /* CharacterPartsScene.sks */; };
 		1999CBC22596369E00064515 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999CBC12596369E00064515 /* SettingsScene.swift */; };
 		1999CBC4259636A900064515 /* SettingsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBC3259636A900064515 /* SettingsScene.sks */; };
-		1999CBC62596476700064515 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBC52596476700064515 /* MyParticle.sks */; };
 		80B23E3A2591268F007461A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B23E392591268F007461A3 /* AppDelegate.swift */; };
 		80B23E3C2591268F007461A3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3B2591268F007461A3 /* GameScene.sks */; };
 		80B23E3E2591268F007461A3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3D2591268F007461A3 /* Actions.sks */; };
@@ -51,6 +53,9 @@
 		190BE2C7259131FE000610E6 /* VersesScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = VersesScene.sks; sourceTree = "<group>"; };
 		190BE2C8259131FE000610E6 /* VersesScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersesScene.swift; sourceTree = "<group>"; };
 		190BE2CC259134CC000610E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		196A50AF25976BCB005639D4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		196A50B225976D09005639D4 /* KnestyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnestyScene.swift; sourceTree = "<group>"; };
+		196A50B425976D2F005639D4 /* KnestyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KnestyScene.sks; sourceTree = "<group>"; };
 		19716F01259513A800EC7BBA /* InitialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InitialScene.sks; sourceTree = "<group>"; };
 		19716F03259514D600EC7BBA /* InitialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScene.swift; sourceTree = "<group>"; };
 		19716F072595230D00EC7BBA /* MamaEl3adraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamaEl3adraScene.swift; sourceTree = "<group>"; };
@@ -66,7 +71,6 @@
 		1999CBBE259620BF00064515 /* CharacterPartsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterPartsScene.sks; sourceTree = "<group>"; };
 		1999CBC12596369E00064515 /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		1999CBC3259636A900064515 /* SettingsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsScene.sks; sourceTree = "<group>"; };
-		1999CBC52596476700064515 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		80B23E362591268F007461A3 /* Gameathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B23E392591268F007461A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B23E3B2591268F007461A3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 				190BE2C7259131FE000610E6 /* VersesScene.sks */,
 			);
 			path = VersesScene;
+			sourceTree = "<group>";
+		};
+		196A50B125976CF8005639D4 /* KnestyScene */ = {
+			isa = PBXGroup;
+			children = (
+				196A50B225976D09005639D4 /* KnestyScene.swift */,
+				196A50B425976D2F005639D4 /* KnestyScene.sks */,
+			);
+			path = KnestyScene;
 			sourceTree = "<group>";
 		};
 		19716F05259522AF00EC7BBA /* InitialScene */ = {
@@ -208,6 +221,7 @@
 		80B23E382591268F007461A3 /* Gameathon */ = {
 			isa = PBXGroup;
 			children = (
+				196A50B125976CF8005639D4 /* KnestyScene */,
 				1999CBC02596368800064515 /* SettingsScene */,
 				19716F05259522AF00EC7BBA /* InitialScene */,
 				19716F0B259525FC00EC7BBA /* SelectionScene */,
@@ -228,7 +242,7 @@
 				80B23E4825912692007461A3 /* LaunchScreen.storyboard */,
 				80B23E4B25912692007461A3 /* Info.plist */,
 				190BE2CC259134CC000610E6 /* Assets.xcassets */,
-				1999CBC52596476700064515 /* MyParticle.sks */,
+				196A50AF25976BCB005639D4 /* MyParticle.sks */,
 			);
 			path = Gameathon;
 			sourceTree = "<group>";
@@ -297,11 +311,12 @@
 				80B23E452591268F007461A3 /* Main.storyboard in Resources */,
 				1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */,
 				80B23E3C2591268F007461A3 /* GameScene.sks in Resources */,
+				196A50B525976D2F005639D4 /* KnestyScene.sks in Resources */,
 				190BE2BF25912BB7000610E6 /* wrongAnswer.mp3 in Resources */,
 				19716F1B25953DB900EC7BBA /* verse.mp3 in Resources */,
 				80B23E4A25912692007461A3 /* LaunchScreen.storyboard in Resources */,
 				1999CBC4259636A900064515 /* SettingsScene.sks in Resources */,
-				1999CBC62596476700064515 /* MyParticle.sks in Resources */,
+				196A50B025976BCB005639D4 /* MyParticle.sks in Resources */,
 				19716F02259513A800EC7BBA /* InitialScene.sks in Resources */,
 				80B23E3E2591268F007461A3 /* Actions.sks in Resources */,
 				19716F0F2595284D00EC7BBA /* SelectionScene.sks in Resources */,
@@ -326,6 +341,7 @@
 				190BE2B225912980000610E6 /* LevelsScene.swift in Sources */,
 				80B23E422591268F007461A3 /* GameViewController.swift in Sources */,
 				19716F1725953D7700EC7BBA /* VirtueScene.swift in Sources */,
+				196A50B325976D09005639D4 /* KnestyScene.swift in Sources */,
 				190BE2C425912CD5000610E6 /* CharacterScene.swift in Sources */,
 				1999CBC22596369E00064515 /* SettingsScene.swift in Sources */,
 				190BE2CA259131FE000610E6 /* VersesScene.swift in Sources */,

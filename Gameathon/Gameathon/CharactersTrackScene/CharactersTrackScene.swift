@@ -17,11 +17,11 @@ class CharactersTrackScene: SKScene {
         
         self.score = UserDefaults.standard.integer(forKey: "score")
  
-        if self.score > 5 && self.score < 10 {
+        if self.score > 5 && self.score <= 10 {
            
             rateOneStar()
             
-        } else if self.score > 10 && self.score < 20 {
+        } else if self.score > 10 && self.score <= 20 {
             
             rateTwostars()
             
