@@ -11,12 +11,11 @@ import SpriteKit
 
 class LevelsScene: SKScene {
     
-//    var partOne = SKSpriteNode(imageNamed: "partOne")
-//    var partTwo = SKSpriteNode(imageNamed: "partTwo")
-//
     var hintAudioNode = SKAudioNode()
     var isFromBack = false
     var scoreLabel = SKLabelNode()
+    var isFirstTouch = 0
+    
     var score = 0 {
         didSet {
             scoreLabel.text = "Score: \(score)"
@@ -83,9 +82,21 @@ class LevelsScene: SKScene {
             
         } else if (node.name == "homeBtn") {
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
-//            selectionScene.isFromBack = true
+            //            selectionScene.isFromBack = true
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             
+        } else if (node.name == "mute") {
+            
+            if isFirstTouch % 2 == 0 {
+                hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
+                self.isFirstTouch += 1
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"playBtn")
+                
+            } else {
+                hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
+                self.isFirstTouch += 1
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"mute")
+            }
         }
     }
 }

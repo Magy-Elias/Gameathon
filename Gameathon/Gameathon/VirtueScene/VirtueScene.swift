@@ -12,6 +12,7 @@ import SpriteKit
 class VirtueScene: SKScene {
     
     var hintAudioNode = SKAudioNode()
+    var isFirstTouch = 0
     
       override func didMove(to view: SKView) {
         
@@ -46,6 +47,18 @@ class VirtueScene: SKScene {
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
 //            selectionScene.isFromBack = true
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+        } else if (node.name == "mute") {
+            
+            if isFirstTouch % 2 == 0 {
+                hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
+                self.isFirstTouch += 1
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"playBtn")
+                
+            } else {
+                hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
+                self.isFirstTouch += 1
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"mute")
+            }
         }
     }    
 }

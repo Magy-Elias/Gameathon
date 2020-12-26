@@ -13,6 +13,7 @@ class SelectionScene: SKScene {
     
     var hintAudioNode = SKAudioNode()
     var isFromBack = false
+    var isFirstTouch = 0
     
     override func didMove(to view: SKView) {
         
@@ -50,11 +51,24 @@ class SelectionScene: SKScene {
             guard let charactersTrackScene = SettingsScene(fileNamed: "SettingsScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
-        }  else if (node.name == "knesty") {
+        } else if (node.name == "knesty") {
             
             // navigate to characters track screen
             guard let charactersTrackScene = KnestyScene(fileNamed: "KnestyScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            
+        } else if (node.name == "mute") {
+            
+            if isFirstTouch % 2 == 0 {
+                hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
+                self.isFirstTouch += 1
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"playBtn")
+                
+            } else {
+                hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
+                self.isFirstTouch += 1
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"mute")
+            }
         }
     }
 }
