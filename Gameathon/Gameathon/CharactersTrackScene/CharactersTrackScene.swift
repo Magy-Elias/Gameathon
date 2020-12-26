@@ -12,8 +12,23 @@ import SpriteKit
 class CharactersTrackScene: SKScene {
     
     var score: Int = 0
-
+    var hintAudioNode = SKAudioNode()
+    var isFromBack = false
+    
     override func didMove(to view: SKView) {
+        
+        if !isFromBack {
+            
+            hintAudioNode = SKAudioNode(fileNamed: "yllaE5tarSha5sya")
+            hintAudioNode.isPositional = false
+            self.addChild(hintAudioNode)
+            hintAudioNode.run(SKAction.play())
+
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 7)])
+            hintAudioNode.run(sequence, completion: {
+                self.hintAudioNode.removeFromParent()
+            })
+        }
         
         self.score = UserDefaults.standard.integer(forKey: "score")
  
@@ -108,6 +123,7 @@ class CharactersTrackScene: SKScene {
             
         } else if (node.name == "homeBtn") {
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
+            selectionScene.isFromBack = true
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             
         }

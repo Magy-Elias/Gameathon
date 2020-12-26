@@ -11,6 +11,24 @@ import SpriteKit
 
 class SelectionScene: SKScene {
     
+    var hintAudioNode = SKAudioNode()
+    var isFromBack = false
+    
+    override func didMove(to view: SKView) {
+        
+        if !isFromBack {
+            hintAudioNode = SKAudioNode(fileNamed: "shar7Ell3ba")
+            hintAudioNode.isPositional = false
+            self.addChild(hintAudioNode)
+            hintAudioNode.run(SKAction.play())
+            
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 12)])
+            hintAudioNode.run(sequence, completion: {
+                self.hintAudioNode.removeFromParent()
+            })
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let touch = touches.first else {

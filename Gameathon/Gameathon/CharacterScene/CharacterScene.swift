@@ -19,8 +19,8 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     private var isSubmitting: Bool = true
     let emitter = SKEmitterNode(fileNamed: "MyParticle")
     let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan]
-
-    
+    var hintAudioNode = SKAudioNode()
+    var isFromBack = false
     
     var scoreLabel = SKLabelNode()
     var score = 0 {
@@ -30,6 +30,20 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
+        
+        if !isFromBack {
+
+            hintAudioNode = SKAudioNode(fileNamed: "qssaWsora")
+            hintAudioNode.isPositional = false
+            self.addChild(hintAudioNode)
+            hintAudioNode.run(SKAction.play())
+
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 12)])
+            hintAudioNode.run(sequence, completion: {
+                self.hintAudioNode.removeFromParent()
+            })
+        }
+        
         // Character
 //        mainCharacter = SKSpriteNode(imageNamed: "elbsharaIcon")
 //        mainCharacter?.position = CGPoint(x: 16.053, y: 3.491)
@@ -74,6 +88,7 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
             
             if (node.name == "backBtn") {
                 guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
+                levelsScene.isFromBack = true
                 self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             }
             
@@ -86,7 +101,6 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                     self.currentNode = node
                 }
             }
-            
         }
     }
     
@@ -152,8 +166,8 @@ class CharacterScene: SKScene, SKPhysicsContactDelegate {
                 }
             }  else if (node.name == "homeBtn") {
                 guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
+                selectionScene.isFromBack = true
                 self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
-                
             }
         }
         

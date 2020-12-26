@@ -19,6 +19,15 @@
 		196A50B025976BCB005639D4 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 196A50AF25976BCB005639D4 /* MyParticle.sks */; };
 		196A50B325976D09005639D4 /* KnestyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196A50B225976D09005639D4 /* KnestyScene.swift */; };
 		196A50B525976D2F005639D4 /* KnestyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 196A50B425976D2F005639D4 /* KnestyScene.sks */; };
+		196A50B72597828B005639D4 /* shar7Ell3ba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50B62597828B005639D4 /* shar7Ell3ba.mp3 */; };
+		196A50C025978731005639D4 /* YllaE5tarQssa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50B825978730005639D4 /* YllaE5tarQssa.mp3 */; };
+		196A50C125978731005639D4 /* puzzle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50B925978730005639D4 /* puzzle.mp3 */; };
+		196A50C225978731005639D4 /* l3bElsha5sya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50BA25978731005639D4 /* l3bElsha5sya.mp3 */; };
+		196A50C325978731005639D4 /* lwKontMakany.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50BB25978731005639D4 /* lwKontMakany.mp3 */; };
+		196A50C425978731005639D4 /* la3btElaya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50BC25978731005639D4 /* la3btElaya.mp3 */; };
+		196A50C525978731005639D4 /* qssaWsora.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50BD25978731005639D4 /* qssaWsora.mp3 */; };
+		196A50C625978731005639D4 /* knesty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50BE25978731005639D4 /* knesty.mp3 */; };
+		196A50C725978731005639D4 /* yllaE5tarSha5sya.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 196A50BF25978731005639D4 /* yllaE5tarSha5sya.mp3 */; };
 		19716F02259513A800EC7BBA /* InitialScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 19716F01259513A800EC7BBA /* InitialScene.sks */; };
 		19716F04259514D600EC7BBA /* InitialScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19716F03259514D600EC7BBA /* InitialScene.swift */; };
 		19716F082595230D00EC7BBA /* MamaEl3adraScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19716F072595230D00EC7BBA /* MamaEl3adraScene.swift */; };
@@ -56,6 +65,15 @@
 		196A50AF25976BCB005639D4 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		196A50B225976D09005639D4 /* KnestyScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnestyScene.swift; sourceTree = "<group>"; };
 		196A50B425976D2F005639D4 /* KnestyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = KnestyScene.sks; sourceTree = "<group>"; };
+		196A50B62597828B005639D4 /* shar7Ell3ba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shar7Ell3ba.mp3; sourceTree = "<group>"; };
+		196A50B825978730005639D4 /* YllaE5tarQssa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = YllaE5tarQssa.mp3; sourceTree = "<group>"; };
+		196A50B925978730005639D4 /* puzzle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = puzzle.mp3; sourceTree = "<group>"; };
+		196A50BA25978731005639D4 /* l3bElsha5sya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = l3bElsha5sya.mp3; sourceTree = "<group>"; };
+		196A50BB25978731005639D4 /* lwKontMakany.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lwKontMakany.mp3; sourceTree = "<group>"; };
+		196A50BC25978731005639D4 /* la3btElaya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = la3btElaya.mp3; sourceTree = "<group>"; };
+		196A50BD25978731005639D4 /* qssaWsora.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = qssaWsora.mp3; sourceTree = "<group>"; };
+		196A50BE25978731005639D4 /* knesty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knesty.mp3; sourceTree = "<group>"; };
+		196A50BF25978731005639D4 /* yllaE5tarSha5sya.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yllaE5tarSha5sya.mp3; sourceTree = "<group>"; };
 		19716F01259513A800EC7BBA /* InitialScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InitialScene.sks; sourceTree = "<group>"; };
 		19716F03259514D600EC7BBA /* InitialScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialScene.swift; sourceTree = "<group>"; };
 		19716F072595230D00EC7BBA /* MamaEl3adraScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MamaEl3adraScene.swift; sourceTree = "<group>"; };
@@ -105,6 +123,15 @@
 		190BE2B925912BB7000610E6 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				196A50BE25978731005639D4 /* knesty.mp3 */,
+				196A50BC25978731005639D4 /* la3btElaya.mp3 */,
+				196A50BB25978731005639D4 /* lwKontMakany.mp3 */,
+				196A50B925978730005639D4 /* puzzle.mp3 */,
+				196A50BD25978731005639D4 /* qssaWsora.mp3 */,
+				196A50BA25978731005639D4 /* l3bElsha5sya.mp3 */,
+				196A50B825978730005639D4 /* YllaE5tarQssa.mp3 */,
+				196A50BF25978731005639D4 /* yllaE5tarSha5sya.mp3 */,
+				196A50B62597828B005639D4 /* shar7Ell3ba.mp3 */,
 				19716F1A25953DB900EC7BBA /* verse.mp3 */,
 				190BE2BA25912BB7000610E6 /* cheer.mp3 */,
 				190BE2BB25912BB7000610E6 /* wrongAnswer.mp3 */,
@@ -310,19 +337,28 @@
 				19716F0A2595231C00EC7BBA /* MamaEl3adraScene.sks in Resources */,
 				80B23E452591268F007461A3 /* Main.storyboard in Resources */,
 				1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */,
+				196A50C525978731005639D4 /* qssaWsora.mp3 in Resources */,
 				80B23E3C2591268F007461A3 /* GameScene.sks in Resources */,
 				196A50B525976D2F005639D4 /* KnestyScene.sks in Resources */,
 				190BE2BF25912BB7000610E6 /* wrongAnswer.mp3 in Resources */,
+				196A50C025978731005639D4 /* YllaE5tarQssa.mp3 in Resources */,
 				19716F1B25953DB900EC7BBA /* verse.mp3 in Resources */,
+				196A50C425978731005639D4 /* la3btElaya.mp3 in Resources */,
 				80B23E4A25912692007461A3 /* LaunchScreen.storyboard in Resources */,
+				196A50B72597828B005639D4 /* shar7Ell3ba.mp3 in Resources */,
 				1999CBC4259636A900064515 /* SettingsScene.sks in Resources */,
+				196A50C325978731005639D4 /* lwKontMakany.mp3 in Resources */,
+				196A50C225978731005639D4 /* l3bElsha5sya.mp3 in Resources */,
 				196A50B025976BCB005639D4 /* MyParticle.sks in Resources */,
+				196A50C625978731005639D4 /* knesty.mp3 in Resources */,
 				19716F02259513A800EC7BBA /* InitialScene.sks in Resources */,
 				80B23E3E2591268F007461A3 /* Actions.sks in Resources */,
 				19716F0F2595284D00EC7BBA /* SelectionScene.sks in Resources */,
 				19716F1925953D8600EC7BBA /* VirtueScene.sks in Resources */,
 				190BE2B125912980000610E6 /* LevelsScene.sks in Resources */,
 				190BE2CD259134CC000610E6 /* Assets.xcassets in Resources */,
+				196A50C125978731005639D4 /* puzzle.mp3 in Resources */,
+				196A50C725978731005639D4 /* yllaE5tarSha5sya.mp3 in Resources */,
 				190BE2C525912CD5000610E6 /* CharacterScene.sks in Resources */,
 				19716F14259529B500EC7BBA /* CharactersTrackScene.sks in Resources */,
 			);
