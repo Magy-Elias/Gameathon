@@ -23,7 +23,8 @@ class VersesScene: SKScene {
     
     let emitter = SKEmitterNode(fileNamed: "MyParticle")
     let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan]
-
+    var hintAudioNode = SKAudioNode()
+    var isFromBack = false
     
 //    var score = 0 {
 //        didSet {
@@ -34,15 +35,17 @@ class VersesScene: SKScene {
 
     override func didMove(to view: SKView) {
         
-//        verseAudioNode = SKAudioNode(fileNamed: "")
-//         verseAudioNode.isPositional = false
-//         self.addChild(verseAudioNode)
-//         verseAudioNode.run(SKAction.play())
-//         
-//         let sequence = SKAction.sequence([SKAction.wait(forDuration: 10)])
-//         verseAudioNode.run(sequence, completion: {
-//             self.verseAudioNode.removeFromParent()
-//         })
+        if !isFromBack {
+            hintAudioNode = SKAudioNode(fileNamed: "la3btElaya")
+            hintAudioNode.isPositional = false
+            self.addChild(hintAudioNode)
+            hintAudioNode.run(SKAction.play())
+
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 12)])
+            hintAudioNode.run(sequence, completion: {
+                self.hintAudioNode.removeFromParent()
+            })
+        }
         
         // score label
         score = UserDefaults.standard.integer(forKey: "score")
@@ -139,12 +142,13 @@ class VersesScene: SKScene {
             
         } else if (node.name == "backBtn") {
             guard let levelsScene = LevelsScene(fileNamed: "LevelsScene") else { return }
+            levelsScene.isFromBack = true
             self.view?.presentScene(levelsScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             
         } else if (node.name == "homeBtn") {
-            
             // navigate to selection track screen
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
+            selectionScene.isFromBack = true
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
         
