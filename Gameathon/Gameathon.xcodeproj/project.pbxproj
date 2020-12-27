@@ -105,7 +105,7 @@
 		8030FEFF2597647300BAD84D /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		8030FF012597B2B700BAD84D /* wrong_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong_sound.mp3; sourceTree = "<group>"; };
 		8030FF022597B2B700BAD84D /* success_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success_sound.mp3; sourceTree = "<group>"; };
-		80B23E362591268F007461A3 /* Gameathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B23E362591268F007461A3 /* Bible Treasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bible Treasure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B23E392591268F007461A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B23E3B2591268F007461A3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		80B23E3D2591268F007461A3 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -258,7 +258,7 @@
 		80B23E372591268F007461A3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80B23E362591268F007461A3 /* Gameathon.app */,
+				80B23E362591268F007461A3 /* Bible Treasure.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,7 +323,7 @@
 			);
 			name = Gameathon;
 			productName = Gameathon;
-			productReference = 80B23E362591268F007461A3 /* Gameathon.app */;
+			productReference = 80B23E362591268F007461A3 /* Bible Treasure.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -374,18 +374,18 @@
 				196A50B525976D2F005639D4 /* KnestyScene.sks in Resources */,
 				190BE2BF25912BB7000610E6 /* wrongAnswer.mp3 in Resources */,
 				196A50C025978731005639D4 /* YllaE5tarQssa.mp3 in Resources */,
-                8030FF042597B2B700BAD84D /* success_sound.mp3 in Resources */,
+				8030FF042597B2B700BAD84D /* success_sound.mp3 in Resources */,
 				19716F1B25953DB900EC7BBA /* verse.mp3 in Resources */,
 				196A50C425978731005639D4 /* la3btElaya.mp3 in Resources */,
 				80B23E4A25912692007461A3 /* LaunchScreen.storyboard in Resources */,
 				196A50B72597828B005639D4 /* shar7Ell3ba.mp3 in Resources */,
-                8030FEFA259762E700BAD84D /* PuzzleScene.sks in Resources */,
+				8030FEFA259762E700BAD84D /* PuzzleScene.sks in Resources */,
 				1999CBC4259636A900064515 /* SettingsScene.sks in Resources */,
 				196A50C325978731005639D4 /* lwKontMakany.mp3 in Resources */,
 				196A50C225978731005639D4 /* l3bElsha5sya.mp3 in Resources */,
 				196A50B025976BCB005639D4 /* MyParticle.sks in Resources */,
 				196A50C625978731005639D4 /* knesty.mp3 in Resources */,
-                8030FF032597B2B700BAD84D /* wrong_sound.mp3 in Resources */,
+				8030FF032597B2B700BAD84D /* wrong_sound.mp3 in Resources */,
 				19716F02259513A800EC7BBA /* InitialScene.sks in Resources */,
 				80B23E3E2591268F007461A3 /* Actions.sks in Resources */,
 				19716F0F2595284D00EC7BBA /* SelectionScene.sks in Resources */,
@@ -415,7 +415,7 @@
 				80B23E422591268F007461A3 /* GameViewController.swift in Sources */,
 				19716F1725953D7700EC7BBA /* VirtueScene.swift in Sources */,
 				196A50B325976D09005639D4 /* KnestyScene.swift in Sources */,
-                8030FEFC2597638A00BAD84D /* PuzzleModel.swift in Sources */,
+				8030FEFC2597638A00BAD84D /* PuzzleModel.swift in Sources */,
 				190BE2C425912CD5000610E6 /* CharacterScene.swift in Sources */,
 				1999CBC22596369E00064515 /* SettingsScene.swift in Sources */,
 				190BE2CA259131FE000610E6 /* VersesScene.swift in Sources */,
@@ -576,7 +576,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magyelias.Gameathon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bible Treasure";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -594,7 +594,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.magyelias.Gameathon;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bible Treasure";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
