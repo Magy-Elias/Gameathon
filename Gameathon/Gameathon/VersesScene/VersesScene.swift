@@ -22,7 +22,7 @@ class VersesScene: SKScene {
     var verseAudioNode = SKAudioNode()
     
     let emitter = SKEmitterNode(fileNamed: "MyParticle")
-    let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan]
+    let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan, SKColor.blue]
     var hintAudioNode = SKAudioNode()
     var isFromBack = false
     var isFirstTouch = 0
