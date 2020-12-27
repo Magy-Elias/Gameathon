@@ -354,7 +354,7 @@ class PuzzleScene: SKScene {
 extension PuzzleScene {
     func animateNodes(_ nodes: [SKNode]) {
         for (index, node) in nodes.enumerated() {
-            let sequence = SKAction.sequence([SKAction.wait(forDuration: 2)])
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 1)])
             node.run(sequence, completion: {
                 node.removeFromParent()
             })
@@ -364,7 +364,7 @@ extension PuzzleScene {
     func animateNodesWithTwist(_ nodes: [SKNode]) {
         for (index, node) in nodes.enumerated() {
             
-            let sequence = SKAction.sequence([SKAction.wait(forDuration: 2)])
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 1)])
             node.run(sequence, completion: {
                 node.removeFromParent()
             })
