@@ -21,9 +21,9 @@ class SettingsScene: SKScene {
         let node = self.atPoint(location)
         
         if (node.name == "backBtn") {
-            
             // navigate to selection track screen
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
+            selectionScene.isFromBack = true
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
         }
     }
