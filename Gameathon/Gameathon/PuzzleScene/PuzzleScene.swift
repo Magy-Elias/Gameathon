@@ -44,6 +44,8 @@ class PuzzleScene: SKScene {
     
     let bravoNode = SKSpriteNode(texture: SKTexture(imageNamed: "bravoo"))
     let sadNode = SKSpriteNode(texture: SKTexture(imageNamed: "sad"))
+    let emitter = SKEmitterNode(fileNamed: "MyParticle")
+    let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan, SKColor.blue]
     
     //Current puzzle pieces fitted
     private var score = 0{
@@ -59,6 +61,27 @@ class PuzzleScene: SKScene {
                 
             }
         }
+    }
+    
+    func emitParticles() {
+        
+        emitter?.position = CGPoint(x: 0.5, y: 0.5)
+        emitter?.particleColorSequence = nil
+        emitter?.particleColorBlendFactor = 2.0
+        
+        self.addChild(emitter!)
+        
+        let action = SKAction.run({
+            [unowned self] in
+            let random = Int(arc4random_uniform(UInt32(self.colors.count)))
+            
+            self.emitter?.particleColor = self.colors[random];  //SKColor.yellow
+        })
+        
+        let wait = SKAction.wait(forDuration: 0.1)
+        
+        self.run(SKAction.repeatForever( SKAction.sequence([action,wait])))
+        
     }
     
     private func setScoreString(score: Int) -> String{
@@ -110,6 +133,7 @@ class PuzzleScene: SKScene {
                     //Change font color
                     scoreLabel.fontColor = .green
 
+                    self.emitParticles()
                     //Play the sound of the user scoring a point
                     SoundPlayer.playSound(soundName: Constants.wonGameSound)
             }
@@ -177,11 +201,13 @@ class PuzzleScene: SKScene {
         score = 0
         
         //Remove all elements
-        for i in 0 ..< self.children.count {
-            if self.children[i].name == Constants.movableNodeName {
-                self.removeFromParent()
-            }
-        }
+//        for i in 0 ..< self.children.count {
+//            print(self.children[i].name)
+//            if let childName = self.children[i].name, childName != "basicBg" && childName != "backBtn" {
+//                self.removeFromParent()
+//            }
+//        }
+        self.removeAllChildren()
         puzzle.puzzlePieces.0.removeAll()
         
         //Change the game state
