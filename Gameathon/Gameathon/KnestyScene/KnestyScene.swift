@@ -13,14 +13,17 @@ class KnestyScene: SKScene {
     
     var hintAudioNode = SKAudioNode()
     var isFirstTouch = 0
+    var isFromBack = false
     
     override func didMove(to view: SKView) {
-         
+        
+        if !isFromBack {
           hintAudioNode = SKAudioNode(fileNamed: "knesty")
           hintAudioNode.isPositional = false
           self.addChild(hintAudioNode)
           hintAudioNode.run(SKAction.play())
-
+        }
+        
           let sequence = SKAction.sequence([SKAction.wait(forDuration: 8)])
           hintAudioNode.run(sequence, completion: {
               self.hintAudioNode.removeFromParent()

@@ -42,8 +42,6 @@ class PuzzleScene: SKScene {
     private var guidePhoto = SKSpriteNode()
     private var scoreLabel = SKLabelNode()
     
-    let bravoNode = SKSpriteNode(texture: SKTexture(imageNamed: "bravoo"))
-    let sadNode = SKSpriteNode(texture: SKTexture(imageNamed: "sad"))
     let emitter = SKEmitterNode(fileNamed: "MyParticle")
     let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan, SKColor.blue]
     
@@ -123,7 +121,7 @@ class PuzzleScene: SKScene {
                     //Change the guide photo to be more transparent
                     guidePhoto.alpha = 0.3
 
-                    setUpRestartButton()
+//                    setUpRestartButton()
 
                     //Add puzzlePieces as children
                     addPuzzlePiecesAsChildren()
@@ -135,9 +133,28 @@ class PuzzleScene: SKScene {
 
                     self.emitParticles()
                     //Play the sound of the user scoring a point
-                    SoundPlayer.playSound(soundName: Constants.wonGameSound)
+//                    SoundPlayer.playSound(soundName: Constants.wonGameSound)
+                    let cheerAudioNode = SKAudioNode(fileNamed:  Constants.wonGameSound)
+                    cheerAudioNode.isPositional = false
+                    self.addChild(cheerAudioNode)
+                    cheerAudioNode.run(SKAction.play())
+                    let sequence = SKAction.sequence([SKAction.wait(forDuration: 4.4)])
+                    cheerAudioNode.run(sequence, completion: {
+                        cheerAudioNode.removeFromParent()
+//                        self.displayGameOver()
+                    })
             }
         }
+    }
+    
+    func displayGameOver() {
+        UserDefaults.standard.set(score, forKey: "score")
+        
+        let gameOverScene = GameOverScene(size: size)
+        gameOverScene.scaleMode = scaleMode
+        
+        let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+        view?.presentScene(gameOverScene, transition: reveal)
     }
     
     // MARK: - Setting up
@@ -278,13 +295,6 @@ class PuzzleScene: SKScene {
                         //Increase the score
                         score += 1
                         
-                        sadNode.removeFromParent()
-                        bravoNode.zPosition = 4
-                        bravoNode.size = CGSize(width: 150, height: 100)
-                        bravoNode.position = CGPoint(x: -59, y: 80)
-                        self.addChild(bravoNode)
-                        animateNodesWithTwist([bravoNode])
-                        
                         //Game ends if all pieces are in their right place
                         if score == Constants.numberOfPuzzlePieces {
 
@@ -300,14 +310,6 @@ class PuzzleScene: SKScene {
                         selectedNode.run(moveAction)
                         //Play the sound of the user making a mistake
                         SoundPlayer.playSound(soundName: Constants.wrongSound)
-                        
-                        bravoNode.removeFromParent()
-                        
-                        sadNode.zPosition = 4
-                        sadNode.size = CGSize(width: 150, height: 80)
-                        sadNode.position = CGPoint(x: -59, y: 122)
-                        self.addChild(sadNode)
-                        animateNodes([sadNode])
                     }
                 }
             }
@@ -368,32 +370,9 @@ class PuzzleScene: SKScene {
             
             else if (touchedNode.name == "backBtn") {
                 guard let knestyScene = KnestyScene(fileNamed: "KnestyScene") else { return }
-//                knestyScene.isFromBack = true
+                knestyScene.isFromBack = true
                 self.view?.presentScene(knestyScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             }
-        }
-    }
-}
-
-
-
-extension PuzzleScene {
-    func animateNodes(_ nodes: [SKNode]) {
-        for (index, node) in nodes.enumerated() {
-            let sequence = SKAction.sequence([SKAction.wait(forDuration: 1)])
-            node.run(sequence, completion: {
-                node.removeFromParent()
-            })
-        }
-    }
-    
-    func animateNodesWithTwist(_ nodes: [SKNode]) {
-        for (index, node) in nodes.enumerated() {
-            
-            let sequence = SKAction.sequence([SKAction.wait(forDuration: 1)])
-            node.run(sequence, completion: {
-                node.removeFromParent()
-            })
         }
     }
 }
