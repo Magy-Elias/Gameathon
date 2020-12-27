@@ -24,7 +24,7 @@ class SettingsScene: SKScene {
             // navigate to selection track screen
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
             selectionScene.isFromBack = true
-            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
         }
     }
 }

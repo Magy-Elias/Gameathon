@@ -29,8 +29,8 @@ class Puzzle {
             
             let puzzlePiece = puzzlePieces.0[i]
             
-            let positionX = CGFloat.random(in: (-350)...(-150))
-            let positionY = CGFloat.random(in: (-150)...(150))
+            let positionX = CGFloat.random(in: (-280)...(-150))
+            let positionY = CGFloat.random(in: (-130)...(130))
             
             //First half of puzzle pieces is placed on right side
             if i % 2 == 0 {
@@ -65,6 +65,7 @@ class Puzzle {
             
             //Make the puzzle piece movable
             puzzlePiece.name = name
+            puzzlePiece.zPosition = 2
         }
     }
     

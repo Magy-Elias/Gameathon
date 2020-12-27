@@ -17,7 +17,7 @@ class PuzzleScene: SKScene {
         static let wrongSound = "wrong_sound"
         static let wonGameSound = "cheer"
         
-        static let imageForPuzzle = "jesusPuzzle"
+        static let imageForPuzzle = "puzzel full photo-1"
         
         static let staticNodeName = "staticNodeName"
         static let movableNodeName = "movable"
@@ -42,6 +42,9 @@ class PuzzleScene: SKScene {
     private var guidePhoto = SKSpriteNode()
     private var scoreLabel = SKLabelNode()
     
+    let bravoNode = SKSpriteNode(texture: SKTexture(imageNamed: "bravoo"))
+    let sadNode = SKSpriteNode(texture: SKTexture(imageNamed: "sad"))
+    
     //Current puzzle pieces fitted
     private var score = 0{
         didSet{
@@ -53,6 +56,7 @@ class PuzzleScene: SKScene {
             //Playes a sound when a player scores.
             if (newValue > score && newValue > 0) {
                 SoundPlayer.playSound(soundName: Constants.succesSound)
+                
             }
         }
     }
@@ -119,7 +123,7 @@ class PuzzleScene: SKScene {
         guidePhoto.size = Constants.puzzleImageSize
         guidePhoto.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         guidePhoto.name = Constants.staticNodeName
-        guidePhoto.zPosition = -1
+        guidePhoto.zPosition = 2
         
         self.addChild(guidePhoto)
     }
@@ -138,24 +142,21 @@ class PuzzleScene: SKScene {
 
 
         //Add the label for displaying
-        self.addChild(scoreLabel)
+//        self.addChild(scoreLabel)
     }
     
     //Set up the restart button
     private func setUpRestartButton(){
         
-        let button = SKButton(color: .red, size: .zero)
-        
+        let button = SKButton(imageNamed: "Group 5961")
+
         button.animatable = true
-        
-        button.size = CGSize(width: 100, height: 50)
+
+//        button.size = CGSize(width: 100, height: 50)
         button.anchorPoint = CGPoint(x: 0, y: 0)
-        button.position = CGPoint(x: frame.midX - button.size.height,
-                                  y: frame.midY - Constants.puzzleImageSize.height/2 - button.size.height
-        )
-        button.zPosition = 4
-        
-        button.setTitle(string: "Restart")
+        button.position = CGPoint(x: 250.0,
+                                  y: -149.371)
+        button.zPosition = 2
         
         //Excecute restartGame() then the user presses the button
         button.addTarget(target: self, selector: #selector(restartGame), event: SKButtonEvent.TouchUpInside)
@@ -176,7 +177,11 @@ class PuzzleScene: SKScene {
         score = 0
         
         //Remove all elements
-        self.removeAllChildren()
+        for i in 0 ..< self.children.count {
+            if self.children[i].name == Constants.movableNodeName {
+                self.removeFromParent()
+            }
+        }
         puzzle.puzzlePieces.0.removeAll()
         
         //Change the game state
@@ -247,6 +252,13 @@ class PuzzleScene: SKScene {
                         //Increase the score
                         score += 1
                         
+                        sadNode.removeFromParent()
+                        bravoNode.zPosition = 4
+                        bravoNode.size = CGSize(width: 150, height: 100)
+                        bravoNode.position = CGPoint(x: -59, y: 80)
+                        self.addChild(bravoNode)
+                        animateNodesWithTwist([bravoNode])
+                        
                         //Game ends if all pieces are in their right place
                         if score == Constants.numberOfPuzzlePieces {
 
@@ -263,6 +275,13 @@ class PuzzleScene: SKScene {
                         //Play the sound of the user making a mistake
                         SoundPlayer.playSound(soundName: Constants.wrongSound)
                         
+                        bravoNode.removeFromParent()
+                        
+                        sadNode.zPosition = 4
+                        sadNode.size = CGSize(width: 150, height: 80)
+                        sadNode.position = CGPoint(x: -59, y: 122)
+                        self.addChild(sadNode)
+                        animateNodes([sadNode])
                     }
                 }
             }
@@ -320,6 +339,35 @@ class PuzzleScene: SKScene {
             if !selectedNode.isEqual(touchedNode) {
                 selectedNode = touchedNode as! SKSpriteNode
             }
+            
+            else if (touchedNode.name == "backBtn") {
+                guard let knestyScene = KnestyScene(fileNamed: "KnestyScene") else { return }
+//                knestyScene.isFromBack = true
+                self.view?.presentScene(knestyScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+            }
+        }
+    }
+}
+
+
+
+extension PuzzleScene {
+    func animateNodes(_ nodes: [SKNode]) {
+        for (index, node) in nodes.enumerated() {
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 2)])
+            node.run(sequence, completion: {
+                node.removeFromParent()
+            })
+        }
+    }
+    
+    func animateNodesWithTwist(_ nodes: [SKNode]) {
+        for (index, node) in nodes.enumerated() {
+            
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 2)])
+            node.run(sequence, completion: {
+                node.removeFromParent()
+            })
         }
     }
 }

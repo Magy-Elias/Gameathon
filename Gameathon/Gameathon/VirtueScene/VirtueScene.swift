@@ -50,7 +50,7 @@ class VirtueScene: SKScene {
             // navigate to selection track screen
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
 //            selectionScene.isFromBack = true
-            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             
         } else if (node.name == "mute") {
             
@@ -64,12 +64,6 @@ class VirtueScene: SKScene {
                 self.isFirstTouch += 1
                 (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"muteBlue")
             }
-        } else if (node.name == "homeBtn") {
-            // navigate to selection track screen
-            guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
-            //            selectionScene.isFromBack = true
-            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
-            
         } else if (node.name == "red") {
             
             smileNNode.removeFromParent()
