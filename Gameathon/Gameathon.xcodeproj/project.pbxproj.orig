@@ -43,6 +43,7 @@
 		1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBBE259620BF00064515 /* CharacterPartsScene.sks */; };
 		1999CBC22596369E00064515 /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1999CBC12596369E00064515 /* SettingsScene.swift */; };
 		1999CBC4259636A900064515 /* SettingsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1999CBC3259636A900064515 /* SettingsScene.sks */; };
+<<<<<<< HEAD
 		8030FEF62597626600BAD84D /* PuzzleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030FEF52597626600BAD84D /* PuzzleScene.swift */; };
 		8030FEF8259762BE00BAD84D /* SKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030FEF7259762BE00BAD84D /* SKButton.swift */; };
 		8030FEFA259762E700BAD84D /* PuzzleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8030FEF9259762E700BAD84D /* PuzzleScene.sks */; };
@@ -51,6 +52,8 @@
 		8030FF002597647300BAD84D /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8030FEFF2597647300BAD84D /* SoundPlayer.swift */; };
 		8030FF032597B2B700BAD84D /* wrong_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8030FF012597B2B700BAD84D /* wrong_sound.mp3 */; };
 		8030FF042597B2B700BAD84D /* success_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8030FF022597B2B700BAD84D /* success_sound.mp3 */; };
+=======
+>>>>>>> develop
 		80B23E3A2591268F007461A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B23E392591268F007461A3 /* AppDelegate.swift */; };
 		80B23E3C2591268F007461A3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3B2591268F007461A3 /* GameScene.sks */; };
 		80B23E3E2591268F007461A3 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E3D2591268F007461A3 /* Actions.sks */; };
@@ -58,6 +61,7 @@
 		80B23E422591268F007461A3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B23E412591268F007461A3 /* GameViewController.swift */; };
 		80B23E452591268F007461A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E432591268F007461A3 /* Main.storyboard */; };
 		80B23E4A25912692007461A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B23E4825912692007461A3 /* LaunchScreen.storyboard */; };
+		80DBFC9E2597395700AEA5DA /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 80DBFC9D2597395700AEA5DA /* MyParticle.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +101,7 @@
 		1999CBBE259620BF00064515 /* CharacterPartsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CharacterPartsScene.sks; sourceTree = "<group>"; };
 		1999CBC12596369E00064515 /* SettingsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		1999CBC3259636A900064515 /* SettingsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SettingsScene.sks; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		8030FEF52597626600BAD84D /* PuzzleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleScene.swift; sourceTree = "<group>"; };
 		8030FEF7259762BE00BAD84D /* SKButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButton.swift; sourceTree = "<group>"; };
 		8030FEF9259762E700BAD84D /* PuzzleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PuzzleScene.sks; sourceTree = "<group>"; };
@@ -105,6 +110,8 @@
 		8030FEFF2597647300BAD84D /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 		8030FF012597B2B700BAD84D /* wrong_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = wrong_sound.mp3; sourceTree = "<group>"; };
 		8030FF022597B2B700BAD84D /* success_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = success_sound.mp3; sourceTree = "<group>"; };
+=======
+>>>>>>> develop
 		80B23E362591268F007461A3 /* Gameathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gameathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B23E392591268F007461A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B23E3B2591268F007461A3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -114,6 +121,7 @@
 		80B23E442591268F007461A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B23E4925912692007461A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80B23E4B25912692007461A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80DBFC9D2597395700AEA5DA /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,7 +296,11 @@
 				80B23E4825912692007461A3 /* LaunchScreen.storyboard */,
 				80B23E4B25912692007461A3 /* Info.plist */,
 				190BE2CC259134CC000610E6 /* Assets.xcassets */,
+<<<<<<< HEAD
+				80DBFC9D2597395700AEA5DA /* MyParticle.sks */,
+=======
 				196A50AF25976BCB005639D4 /* MyParticle.sks */,
+>>>>>>> develop
 			);
 			path = Gameathon;
 			sourceTree = "<group>";
@@ -366,6 +378,7 @@
 			files = (
 				190BE2BE25912BB7000610E6 /* cheer.mp3 in Resources */,
 				190BE2C9259131FE000610E6 /* VersesScene.sks in Resources */,
+				80DBFC9E2597395700AEA5DA /* MyParticle.sks in Resources */,
 				19716F0A2595231C00EC7BBA /* MamaEl3adraScene.sks in Resources */,
 				80B23E452591268F007461A3 /* Main.storyboard in Resources */,
 				1999CBBF259620BF00064515 /* CharacterPartsScene.sks in Resources */,
@@ -373,19 +386,26 @@
 				80B23E3C2591268F007461A3 /* GameScene.sks in Resources */,
 				196A50B525976D2F005639D4 /* KnestyScene.sks in Resources */,
 				190BE2BF25912BB7000610E6 /* wrongAnswer.mp3 in Resources */,
+<<<<<<< HEAD
+				8030FF042597B2B700BAD84D /* success_sound.mp3 in Resources */,
+=======
 				196A50C025978731005639D4 /* YllaE5tarQssa.mp3 in Resources */,
-                8030FF042597B2B700BAD84D /* success_sound.mp3 in Resources */,
+>>>>>>> develop
 				19716F1B25953DB900EC7BBA /* verse.mp3 in Resources */,
 				196A50C425978731005639D4 /* la3btElaya.mp3 in Resources */,
 				80B23E4A25912692007461A3 /* LaunchScreen.storyboard in Resources */,
+<<<<<<< HEAD
+				8030FEFA259762E700BAD84D /* PuzzleScene.sks in Resources */,
+				1999CBC4259636A900064515 /* SettingsScene.sks in Resources */,
+				8030FF032597B2B700BAD84D /* wrong_sound.mp3 in Resources */,
+=======
 				196A50B72597828B005639D4 /* shar7Ell3ba.mp3 in Resources */,
-                8030FEFA259762E700BAD84D /* PuzzleScene.sks in Resources */,
 				1999CBC4259636A900064515 /* SettingsScene.sks in Resources */,
 				196A50C325978731005639D4 /* lwKontMakany.mp3 in Resources */,
 				196A50C225978731005639D4 /* l3bElsha5sya.mp3 in Resources */,
 				196A50B025976BCB005639D4 /* MyParticle.sks in Resources */,
 				196A50C625978731005639D4 /* knesty.mp3 in Resources */,
-                8030FF032597B2B700BAD84D /* wrong_sound.mp3 in Resources */,
+>>>>>>> develop
 				19716F02259513A800EC7BBA /* InitialScene.sks in Resources */,
 				80B23E3E2591268F007461A3 /* Actions.sks in Resources */,
 				19716F0F2595284D00EC7BBA /* SelectionScene.sks in Resources */,
@@ -414,8 +434,11 @@
 				8030FEF62597626600BAD84D /* PuzzleScene.swift in Sources */,
 				80B23E422591268F007461A3 /* GameViewController.swift in Sources */,
 				19716F1725953D7700EC7BBA /* VirtueScene.swift in Sources */,
+<<<<<<< HEAD
+				8030FEFC2597638A00BAD84D /* PuzzleModel.swift in Sources */,
+=======
 				196A50B325976D09005639D4 /* KnestyScene.swift in Sources */,
-                8030FEFC2597638A00BAD84D /* PuzzleModel.swift in Sources */,
+>>>>>>> develop
 				190BE2C425912CD5000610E6 /* CharacterScene.swift in Sources */,
 				1999CBC22596369E00064515 /* SettingsScene.swift in Sources */,
 				190BE2CA259131FE000610E6 /* VersesScene.swift in Sources */,

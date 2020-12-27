@@ -45,6 +45,11 @@ class SelectionScene: SKScene {
             guard let charactersTrackScene = CharactersTrackScene(fileNamed: "CharactersTrackScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
+        } else if (node.name == "kenesty") {
+            // navigate to kenesty screen
+            guard let puzzleScene = PuzzleScene(fileNamed: "PuzzleScene") else { return }
+            self.view?.presentScene(puzzleScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
+            
         } else if (node.name == "settings") {
             
             // navigate to characters track screen
