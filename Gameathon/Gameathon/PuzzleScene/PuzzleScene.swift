@@ -142,6 +142,10 @@ class PuzzleScene: SKScene {
                     cheerAudioNode.run(sequence, completion: {
                         cheerAudioNode.removeFromParent()
 //                        self.displayGameOver()
+                        guard let knestyScene = KnestyScene(fileNamed: "KnestyScene") else { return }
+                        knestyScene.isFromBack = true
+                        self.view?.presentScene(knestyScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
+                        
                     })
             }
         }
