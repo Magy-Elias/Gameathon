@@ -141,7 +141,6 @@ class PuzzleScene: SKScene {
                     let sequence = SKAction.sequence([SKAction.wait(forDuration: 4.4)])
                     cheerAudioNode.run(sequence, completion: {
                         cheerAudioNode.removeFromParent()
-//                        self.displayGameOver()
                         guard let knestyScene = KnestyScene(fileNamed: "KnestyScene") else { return }
                         knestyScene.isFromBack = true
                         self.view?.presentScene(knestyScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))

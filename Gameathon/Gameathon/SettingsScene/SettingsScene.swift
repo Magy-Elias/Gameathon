@@ -20,7 +20,7 @@ class SettingsScene: SKScene {
         let location = touch.location(in: self)
         let node = self.atPoint(location)
         
-        if (node.name == "backBtn") {
+        if (node.name == "homeBtn") {
             // navigate to selection track screen
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
             selectionScene.isFromBack = true
