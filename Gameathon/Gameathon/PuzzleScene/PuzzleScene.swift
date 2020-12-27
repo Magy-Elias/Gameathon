@@ -41,6 +41,8 @@ class PuzzleScene: SKScene {
     private var selectedNodeStartPosition = CGPoint()
     private var guidePhoto = SKSpriteNode()
     private var scoreLabel = SKLabelNode()
+    var hintAudioNode = SKAudioNode()
+    var isFirstTouch = 0
     
     let emitter = SKEmitterNode(fileNamed: "MyParticle")
     let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan, SKColor.blue]
@@ -238,6 +240,16 @@ class PuzzleScene: SKScene {
     // MARK: - Move to view
     override func didMove(to view: SKView) {
         gameState = .start
+        
+        hintAudioNode = SKAudioNode(fileNamed: "puzzle")
+        hintAudioNode.isPositional = false
+        self.addChild(hintAudioNode)
+        hintAudioNode.run(SKAction.play())
+        
+        let sequence = SKAction.sequence([SKAction.wait(forDuration: 7.73)])
+        hintAudioNode.run(sequence, completion: {
+            self.hintAudioNode.removeFromParent()
+        })
     }
     
     // MARK: - Touches
@@ -366,8 +378,22 @@ class PuzzleScene: SKScene {
         let touchedNode = self.atPoint(touchLocation)
         
         if touchedNode is SKSpriteNode {
+             if (touchedNode.name == "mute") {
+                
+                if isFirstTouch % 2 == 0 {
+                    hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
+                    self.isFirstTouch += 1
+                    (touchedNode as? SKSpriteNode)?.texture = SKTexture(imageNamed:"unmuteBlue")
+                    
+                } else {
+                    hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
+                    self.isFirstTouch += 1
+                    (touchedNode as? SKSpriteNode)?.texture = SKTexture(imageNamed:"muteBlue")
+                }
+            }
+            
             //Set touchedNode as solectedNode
-            if !selectedNode.isEqual(touchedNode) {
+            else if !selectedNode.isEqual(touchedNode) {
                 selectedNode = touchedNode as! SKSpriteNode
             }
             

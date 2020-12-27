@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "80B23E352591268F007461A3"
-               BuildableName = "Gameathon.app"
+               BuildableName = "Bible Treasure.app"
                BlueprintName = "Gameathon"
                ReferencedContainer = "container:Gameathon.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80B23E352591268F007461A3"
-            BuildableName = "Gameathon.app"
+            BuildableName = "Bible Treasure.app"
             BlueprintName = "Gameathon"
             ReferencedContainer = "container:Gameathon.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "80B23E352591268F007461A3"
-            BuildableName = "Gameathon.app"
+            BuildableName = "Bible Treasure.app"
             BlueprintName = "Gameathon"
             ReferencedContainer = "container:Gameathon.xcodeproj">
          </BuildableReference>
