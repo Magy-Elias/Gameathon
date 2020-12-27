@@ -26,12 +26,12 @@ class PuzzleScene: SKScene {
         
         static let puzzlePieceSnapDistance = CGFloat(50)
         
-        static let puzzleImageSize = CGSize(width: 300, height: 260)//(width: 760, height: 700)
-        static let puzzlePieceSize = CGSize(width: 150, height: 130)//(width: 190, height: 175)
+        static let puzzleImageSize = CGSize(width: 300, height: 260)
+        static let numberOfPuzzlePieces = 4
+        static let puzzlePieceSize = CGSize(width: CGFloat(puzzleImageSize.width / CGFloat(numberOfPuzzlePieces/2)),
+                                            height: CGFloat(puzzleImageSize.height / CGFloat(numberOfPuzzlePieces/2)))
         
         static let labelOffset:CGFloat = 10
-        
-        static let numberOfPuzzlePieces = 4
         
         static let animationDuration = 0.25
     }
@@ -78,7 +78,6 @@ class PuzzleScene: SKScene {
             switch self.gameState {
                 case .start:
                     setUpGuidePhoto()
-                    
                     //Create puzzle pieces from image
                     if let image = UIImage(named: Constants.imageForPuzzle){
                         puzzle.createPuzzlePieces(fromImage: image, forImageConversionSize: Constants.puzzleImageSize, forPuzzleSize: Constants.puzzlePieceSize)

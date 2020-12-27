@@ -31,22 +31,34 @@ class Puzzle {
             
             let positionX = CGFloat.random(in: (-350)...(-150))
             let positionY = CGFloat.random(in: (-150)...(150))
-                
-            //First half of puzzle pieces is placed on top
-            if i < puzzlePieces.0.count/2 {
-
+            
+            //First half of puzzle pieces is placed on right side
+            if i % 2 == 0 {
                 puzzlePiece.position = CGPoint(x: positionX,
                                                y: positionY)
-//                puzzlePiece.position = CGPoint(x: frame.minX + CGFloat(i * Constants.puzzlePiecesXOffset),
-//                                               y: frame.maxY - CGFloat(Constants.puzzlePiecesYOffset))
             }
-            //Second half of puzzle pieces is placed on bottom
+            //Second half of puzzle pieces is placed on left side
             else {
                 puzzlePiece.position = CGPoint(x: -positionX,
                                                y: positionY)
-//                puzzlePiece.position = CGPoint(x: frame.minX + CGFloat(i % 8 * Constants.puzzlePiecesXOffset),
-//                                               y: frame.minY + CGFloat(Constants.puzzlePiecesYOffset))
             }
+                
+//            //First half of puzzle pieces is placed on top
+//            if i < puzzlePieces.0.count/2 {
+//
+//                puzzlePiece.position = CGPoint(x: positionX,
+//                                               y: positionY)
+////                puzzlePiece.position = CGPoint(x: frame.minX + CGFloat(i * Constants.puzzlePiecesXOffset),
+////                                               y: frame.maxY - CGFloat(Constants.puzzlePiecesYOffset))
+//            }
+//            //Second half of puzzle pieces is placed on bottom
+//            else {
+//                puzzlePiece.position = CGPoint(x: -positionX,
+//                                               y: positionY)
+////                puzzlePiece.position = CGPoint(x: frame.minX + CGFloat(i % 8 * Constants.puzzlePiecesXOffset),
+////                                               y: frame.minY + CGFloat(Constants.puzzlePiecesYOffset))
+//            }
+            
             
 //            let randomRotationIndex = Int(arc4random_uniform(UInt32(rotationAmountArray.count)))
 //            puzzlePiece.zRotation = CGFloat(Double.pi) * CGFloat(rotationAmountArray[randomRotationIndex])
@@ -57,14 +69,12 @@ class Puzzle {
     }
     
     //Create puzzle pieces and fill the puzzlePieces array
-    func createPuzzlePieces(fromImage image: UIImage, forImageConversionSize imageConversionSize:CGSize, forPuzzleSize puzzleSize: CGSize){
+    func createPuzzlePieces(fromImage image: UIImage, forImageConversionSize imageConversionSize: CGSize, forPuzzleSize puzzleSize: CGSize) {
         
         //Get the array of images from the sliced image.
-        if let slicedImages = PuzzleHelper.sliceImage(
-            image: image,
-            imageConversionSize: imageConversionSize,
-            puzzlePieceSize: puzzleSize
-            ){
+        if let slicedImages = PuzzleHelper.sliceImage(image: image,
+                                                      imageConversionSize: imageConversionSize,
+                                                      puzzlePieceSize: puzzleSize) {
             
             //Go through all the image items
             for i in 0..<slicedImages.count {
@@ -115,7 +125,7 @@ class Puzzle {
             
             print("------ correct location of block \(i) = \(correctPosition)")
         }
-        
+        //-------------------------------------------------
         
 //        //Go through all the puzzle pieces
 //        for i in 0 ..< numberOfPuzzlePieces {
