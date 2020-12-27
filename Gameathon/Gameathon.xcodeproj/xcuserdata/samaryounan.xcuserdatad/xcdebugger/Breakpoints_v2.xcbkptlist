@@ -46,8 +46,8 @@
             filePath = "Gameathon/VirtueScene/VirtueScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "touchesBegan(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,9 +62,9 @@
             filePath = "Gameathon/VirtueScene/VirtueScene.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "animateNodes(_:)"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "animateNodesWithTwist(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
