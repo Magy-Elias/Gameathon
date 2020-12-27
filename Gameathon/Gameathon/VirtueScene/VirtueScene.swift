@@ -13,10 +13,12 @@ class VirtueScene: SKScene {
     
     var hintAudioNode = SKAudioNode()
     var isFirstTouch = 0
-    let bravoNode = SKSpriteNode(texture: SKTexture(imageNamed: "great2"))
+    let bravoNode = SKSpriteNode(texture: SKTexture(imageNamed: "bravoo"))
     let smileNNode = SKSpriteNode(texture: SKTexture(imageNamed: "smile"))
     let sadNNode = SKSpriteNode(texture: SKTexture(imageNamed: "sad"))
-    
+    let emitter = SKEmitterNode(fileNamed: "MyParticle")
+    let colors = [SKColor.white, SKColor.yellow, SKColor.magenta ,SKColor.cyan, SKColor.blue]
+
       override func didMove(to view: SKView) {
         
         hintAudioNode = SKAudioNode(fileNamed: "lwKontMakany")
@@ -55,12 +57,12 @@ class VirtueScene: SKScene {
             if isFirstTouch % 2 == 0 {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
                 self.isFirstTouch += 1
-                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"playBtn")
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"umuteBlue")
                 
             } else {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
                 self.isFirstTouch += 1
-                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"mute")
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"muteBlue")
             }
         } else if (node.name == "homeBtn") {
             // navigate to selection track screen
@@ -73,18 +75,27 @@ class VirtueScene: SKScene {
             smileNNode.removeFromParent()
             sadNNode.removeFromParent()
             
-            bravoNode.zPosition = 1
+            bravoNode.zPosition = 2
             bravoNode.size = CGSize(width: 150, height: 100)
             bravoNode.position = CGPoint(x: -59, y: 80)
             self.addChild(bravoNode)
             animateNodesWithTwist([bravoNode])
+//            emitParticles()
+            let cheerAudioNode = SKAudioNode(fileNamed: "cheer.mp3")
+            cheerAudioNode.isPositional = false
+            self.addChild(cheerAudioNode)
+            cheerAudioNode.run(SKAction.play())
+            let sequence = SKAction.sequence([SKAction.wait(forDuration: 4)])
+            cheerAudioNode.run(sequence, completion: {
+                cheerAudioNode.removeFromParent()
+            })
             
         } else if (node.name == "blue") {
             
             bravoNode.removeFromParent()
             sadNNode.removeFromParent()
 
-            smileNNode.zPosition = 1
+            smileNNode.zPosition = 2
             smileNNode.size = CGSize(width: 150, height: 80)
             smileNNode.position = CGPoint(x: -59, y: 122)
             self.addChild(smileNNode)
@@ -95,13 +106,33 @@ class VirtueScene: SKScene {
             bravoNode.removeFromParent()
             smileNNode.removeFromParent()
 
-            sadNNode.zPosition = 1
+            sadNNode.zPosition = 2
             sadNNode.size = CGSize(width: 150, height: 80)
             sadNNode.position = CGPoint(x: -59, y: 122)
             self.addChild(sadNNode)
             animateNodes([sadNNode])
         }
     }
+    
+      func emitParticles() {
+    
+          emitter?.position = CGPoint(x: 0.5, y: 0.5)
+          emitter?.particleColorSequence = nil
+          emitter?.particleColorBlendFactor = 2.0
+
+          self.addChild(emitter!)
+
+          let action = SKAction.run({
+              [unowned self] in
+              let random = Int(arc4random_uniform(UInt32(self.colors.count)))
+
+              self.emitter?.particleColor = self.colors[random];  //SKColor.yellow
+          })
+
+          let wait = SKAction.wait(forDuration: 0.1)
+
+          self.run(SKAction.repeatForever( SKAction.sequence([action,wait])))
+      }
 }
 
 
