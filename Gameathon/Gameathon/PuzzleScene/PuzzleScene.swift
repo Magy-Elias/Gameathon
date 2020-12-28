@@ -181,24 +181,24 @@ class PuzzleScene: SKScene {
 //        self.addChild(scoreLabel)
     }
     
-    //Set up the restart button
-    private func setUpRestartButton(){
-        
-        let button = SKButton(imageNamed: "Group 5961")
-
-        button.animatable = true
-
-//        button.size = CGSize(width: 100, height: 50)
-        button.anchorPoint = CGPoint(x: 0, y: 0)
-        button.position = CGPoint(x: 250.0,
-                                  y: -149.371)
-        button.zPosition = 2
-        
-        //Excecute restartGame() then the user presses the button
-        button.addTarget(target: self, selector: #selector(restartGame), event: SKButtonEvent.TouchUpInside)
-        
-        addChild(button)
-    }
+//    //Set up the restart button
+//    private func setUpRestartButton(){
+//
+//        let button = SKButton(imageNamed: "Group 5961")
+//
+//        button.animatable = true
+//
+////        button.size = CGSize(width: 100, height: 50)
+//        button.anchorPoint = CGPoint(x: 0, y: 0)
+//        button.position = CGPoint(x: 250.0,
+//                                  y: -149.371)
+//        button.zPosition = 2
+//
+//        //Excecute restartGame() then the user presses the button
+//        button.addTarget(target: self, selector: #selector(restartGame), event: SKButtonEvent.TouchUpInside)
+//
+//        addChild(button)
+//    }
     
     //Add all puzzle pieces as children
     private func addPuzzlePiecesAsChildren(){
@@ -224,7 +224,6 @@ class PuzzleScene: SKScene {
         
         //Change the game state
         gameState = GameState.start
-        
     }
     
     // MARK: - Move to view
