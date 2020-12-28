@@ -140,7 +140,7 @@ class PuzzleScene: SKScene {
                     cheerAudioNode.isPositional = false
                     self.addChild(cheerAudioNode)
                     cheerAudioNode.run(SKAction.play())
-                    let sequence = SKAction.sequence([SKAction.wait(forDuration: 4.4)])
+                    let sequence = SKAction.sequence([SKAction.wait(forDuration: 4.34)])
                     cheerAudioNode.run(sequence, completion: {
                         cheerAudioNode.removeFromParent()
                         guard let knestyScene = KnestyScene(fileNamed: "KnestyScene") else { return }
@@ -150,16 +150,6 @@ class PuzzleScene: SKScene {
                     })
             }
         }
-    }
-    
-    func displayGameOver() {
-        UserDefaults.standard.set(score, forKey: "score")
-        
-        let gameOverScene = GameOverScene(size: size)
-        gameOverScene.scaleMode = scaleMode
-        
-        let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-        view?.presentScene(gameOverScene, transition: reveal)
     }
     
     // MARK: - Setting up

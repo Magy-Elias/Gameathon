@@ -39,14 +39,7 @@ class KnestyScene: SKScene {
         let location = touch.location(in: self)
         let node = self.atPoint(location)
         
-        if (node.name == "backBtn") {
-            
-            // navigate to selection track screen
-            guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
-            selectionScene.isFromBack = true
-            self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
-            
-        } else if (node.name == "homeBtn") {
+        if (node.name == "homeBtn") {
             guard let selectionScene = SelectionScene(fileNamed: "SelectionScene") else { return }
             //            selectionScene.isFromBack = true
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
@@ -56,12 +49,12 @@ class KnestyScene: SKScene {
             if isFirstTouch % 2 == 0 {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
                 self.isFirstTouch += 1
-                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"unmuteBlue")
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"unmute")
                 
             } else {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
                 self.isFirstTouch += 1
-                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"muteBlue")
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"mute")
             }
         } else if (node.name == "puzzle") {
             // navigate to puzzle screen
