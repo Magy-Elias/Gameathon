@@ -90,12 +90,12 @@ class LevelsScene: SKScene {
             if isFirstTouch % 2 == 0 {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
                 self.isFirstTouch += 1
-                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"unmuteBlue")
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"unmute")
                 
             } else {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(1), duration: 0))
                 self.isFirstTouch += 1
-                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"muteBlue")
+                (node as? SKSpriteNode)?.texture = SKTexture(imageNamed:"mute")
             }
         }
     }

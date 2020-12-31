@@ -62,7 +62,7 @@ class SelectionScene: SKScene {
             guard let charactersTrackScene = KnestyScene(fileNamed: "KnestyScene") else { return }
             self.view?.presentScene(charactersTrackScene, transition: SKTransition.moveIn(with: .right, duration: 0.5))
             
-        } else if (node.name == "mute") {
+        } else if (node.name == "muteBlue") {
             
             if isFirstTouch % 2 == 0 {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))

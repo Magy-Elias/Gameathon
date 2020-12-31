@@ -55,7 +55,7 @@ class CharacterPartsScene: SKScene {
 //            selectionScene.isFromBack = true
             self.view?.presentScene(selectionScene, transition: SKTransition.moveIn(with: .left, duration: 0.5))
             
-        } else if (node.name == "mute") {
+        } else if (node.name == "muteBlue") {
             
             if isFirstTouch % 2 == 0 {
                 hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))

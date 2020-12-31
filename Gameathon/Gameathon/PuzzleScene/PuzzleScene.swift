@@ -207,19 +207,19 @@ class PuzzleScene: SKScene {
         }
     }
     
-    @objc private func restartGame(){
+    private func restartGame(){
         
         //Reset the user score
         score = 0
         
-        //Remove all elements
-//        for i in 0 ..< self.children.count {
-//            print(self.children[i].name)
-//            if let childName = self.children[i].name, childName != "basicBg" && childName != "backBtn" {
-//                self.removeFromParent()
-//            }
-//        }
-        self.removeAllChildren()
+        for i in 0 ..< self.children.count {
+            if let child = self.childNode(withName: "movable") as? SKSpriteNode {
+                child.removeFromParent()
+            } else if let child = self.childNode(withName: "staticNodeName") as? SKSpriteNode {
+                child.removeFromParent()
+            }
+        }
+        
         puzzle.puzzlePieces.0.removeAll()
         
         //Change the game state
@@ -367,7 +367,7 @@ class PuzzleScene: SKScene {
         let touchedNode = self.atPoint(touchLocation)
         
         if touchedNode is SKSpriteNode {
-             if (touchedNode.name == "mute") {
+             if (touchedNode.name == "muteBlue") {
                 
                 if isFirstTouch % 2 == 0 {
                     hintAudioNode.run(SKAction.changeVolume(to: Float(0), duration: 0))
@@ -379,7 +379,9 @@ class PuzzleScene: SKScene {
                     self.isFirstTouch += 1
                     (touchedNode as? SKSpriteNode)?.texture = SKTexture(imageNamed:"muteBlue")
                 }
-            }
+             } else if touchedNode.name == "restartButton" {
+                self.restartGame()
+             }
             
             //Set touchedNode as solectedNode
             else if !selectedNode.isEqual(touchedNode) {
